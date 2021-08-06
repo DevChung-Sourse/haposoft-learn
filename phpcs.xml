@@ -10,9 +10,7 @@
         <exclude name="Generic.Files.LineEndings"/>
     </rule>
 
-    <!--<rule ref="Squiz.NamingConventions.ValidVariableName">-->
-
-    <!--</rule>-->
+    <rule ref="Squiz.NamingConventions.ValidVariableName"></rule>
     <rule ref="Generic.NamingConventions.CamelCapsFunctionName"/>
     <rule ref="Generic.Debug.JSHint"/>
     <rule ref="Generic.Debug.CSSLint"/>
@@ -22,13 +20,20 @@
         <exclude-pattern>./tests</exclude-pattern>
         <exclude-pattern>./database</exclude-pattern>
     </rule>
-    <!--  <rule ref="Squiz">
-     </rule> -->
+
+    <rule ref="Generic.Files.LineLength">
+    <properties>
+        <property name="lineLimit" value="300"/>
+        <property name="absoluteLineLimit" value="0"/>
+    </properties>
+    </rule>
+
+    <!--  <rule ref="Squiz"></rule> -->
+
     <rule ref="Squiz.Scope.MemberVarScope"/>
     <rule ref="Squiz.Scope.StaticThisUsage"/>
-    <rule ref="Generic.Files.LineLength">
 
-    </rule>
+
     <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
     <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
