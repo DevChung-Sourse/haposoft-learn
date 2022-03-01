@@ -1,0 +1,137 @@
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 8px 10px rgba(0, 0, 0,  0.1);
+
+  .nav__img {
+    width: 340px;
+    height: 70px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .nav__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    padding-left: 0;
+
+    .nav__menu__item {
+      list-style: none;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      margin-right: 35px;
+
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+
+    .active {
+      padding: 8px 20px;
+      background-color: #B2D235;
+      border-radius: 30px;
+
+      a {
+        color: #FEFFFF;
+      }
+    }
+  }
+
+  .nav__icon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    
+    .nav__img {
+      margin-top: 36px;
+    }
+
+    .nav__menu {
+      margin-bottom: 36px;
+    }
+  }
+}
+
+@media only screen and (max-width: 391px) {
+  .nav {
+    height: 65px;
+    box-shadow: none;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    .nav__img {
+      margin-top: 0;
+      margin-right: 120px;
+      width: 150px;
+      height: 26px;
+    }
+
+    .nav__menu {
+      position: absolute;
+      top: 65px;
+      left: -100%;
+      flex-direction: column;
+      height: 20vh;
+      width: 100%;
+
+      .nav__menu__item {
+        //display: none;
+        display: block;
+        align-items: center;
+        margin-right: 0;
+
+        a {
+          font-size: 16px;
+        }
+      }
+
+      .active {
+        background-color: #FEFFFF ;
+  
+        a {
+          color: #B2D235;
+        }
+      }
+    }
+
+    .nav__icon {
+      display: block;
+      margin-left: 20px;
+
+      i {
+        font-size: 20px;
+        padding-top: 8px;
+      }
+    }
+
+    .nav__icon--close {
+      display: none;
+      margin-left: 20px;
+      
+      i {
+        font-size: 20px;
+        padding-top: 8px;
+      }
+    }
+
+    .active__menu {
+      left: 0;
+    }
+  }
+}
