@@ -5,6 +5,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -14,4 +15,5 @@ body {
   margin: 0 auto;
 }
 
-@import 'components/header.scss';
+@import 'components/header';
+@import 'components/banner';

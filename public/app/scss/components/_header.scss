@@ -8,6 +8,7 @@
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 8px 10px rgba(0, 0, 0,  0.1);
+  z-index: 9;
 
   .nav__img {
     width: 340px;
@@ -89,9 +90,9 @@
       flex-direction: column;
       height: 20vh;
       width: 100%;
+      background: #ffffff;
 
       .nav__menu__item {
-        //display: none;
         display: block;
         align-items: center;
         margin-right: 0;
