@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./public/css/app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -15,39 +17,78 @@
     <div class="container">
         <!-- Begin navigation bar -->
         <div class="nav">
-            <div class="nav__img">
-                <img src="./images/logo-hapolearn.png" alt="Logo haposoft learn" class="">
+            <div class="nav-box">
+                <img src="./images/logo-hapolearn.png" alt="Logo haposoft learn" class="nav-box-img">
             </div>
-            <ul class="nav__menu" id="menu">
-                <li class="nav__menu__item"><a href="#">Home</a></li>
-                <li class="nav__menu__item active"><a href="#">All courses</a></li>
-                <li class="nav__menu__item"><a href="#">Login/register</a></li>
-                <li class="nav__menu__item"><a href="#">Profile</a></li>
+            <ul class="nav-menu" id="menu">
+                <li class="nav-menu-item"><a href="#" class="nav-menu-item-link">Home</a></li>
+                <li class="nav-menu-item active"><a href="#" class="nav-menu-item-link">All courses</a></li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-item-link">Login/register</a></li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-item-link">Profile</a></li>
             </ul>
-            <div class="nav__icon"><i class="fa-solid fa-bars nav__bar__icon"></i></div>
-            
+            <div class="nav-icon"><i class="fa-solid fa-bars nav-bar-icon"></i></div>
         </div>
         <!-- End navigation bar -->
 
         <!-- Begin banner -->
         <div class="banner">
-            <div class="banner-bg" style="background-image: url('./images/Hapo_Learn_banner_1.png');"></div>
-            <div class="banner-content">
-                <h2>Learn Anytime, Anywhere</h2>
-                <h3>at HapoLearn <img src="./images/Hapo_learn-icon.png" alt="icon con cú!"> !</h3>
-                <div class="banner-content-desc"><p>Interactive lessons. "on-the-top"<br>practice, per supports</p></div>
-                <button class="banner-content-btn">Start Learn Now</button>
+            <div class="banner-bg" style="background-image: url('./images/Hapo_Learn_banner_1.png');">
+                <div class="banner-content">
+                    <p class="banner-content-title">Learn Anytime, Anywhere</p>
+                    <p class="banner-content-subtitle">at HapoLearn <img src="./images/Hapo_learn-icon.png"
+                            alt="icon con cú!"> !</p>
+                    <p class="banner-content-desc">
+                        Interactive lessons. "on-the-top"<br>practice, per supports
+                    </p>
+                    <button class="banner-content-btn btn">Start Learn Now</button>
+                </div>
             </div>
         </div>
         <!-- End banner -->
+
+        <!-- Begin list course -->
+        <div class="card-list">
+            <div class="card-item">
+                <div class="card-img card-html-bg">
+                    <img src="./images/Hapo_learn_list_course_html_css_js.png" class="card-box-img" alt="...">
+                </div>
+                <div class="card-content">
+                    <h5 class="card-content-title">HTML/CSS/js Tutorial</h5>
+                    <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched...</p>
+                    <a href="" class="card-btn btn">Take This Course</a>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="card-img card-lavarel-bg">
+                    <img src="./images/Hapo_learn_list_course_lavarel.png" class="card-box-img" alt="...">
+                </div>
+                <div class="card-content">
+                    <h5 class="card-content-title">HTML/CSS/js Tutorial</h5>
+                    <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched...</p>
+                    <a href="" class="card-btn btn">Take This Course</a>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="card-img card-php-bg">
+                    <img src="./images/Hapo_learn_list_course_php.png" class="card-box-img" alt="...">
+                </div>
+                <div class="card-content">
+                    <h5 class="card-content-title">HTML/CSS/js Tutorial</h5>
+                    <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched...</p>
+                    <a href="" class="card-btn btn">Take This Course</a>
+                </div>
+            </div>
+            
+        </div>
+        <!-- End list course -->
     </div>
 
     <script>
-        const navBarIcon = document.querySelector(".nav__bar__icon")
+        const navBarIcon = document.querySelector(".nav-bar-icon")
         const menu = document.querySelector("#menu")
 
         navBarIcon.addEventListener("click", () => {
-            menu.classList.toggle("active__menu")
+            menu.classList.toggle("active-menu")
         })
         console.log(navBarIcon);
     </script>
