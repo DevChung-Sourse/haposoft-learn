@@ -2,6 +2,7 @@
   position: relative;
 
   .banner-bg {
+    background-image: url('https://s3-alpha-sig.figma.com/img/866b/63ac/1e9eca12ac0612fb7b885045132e08f8?Expires=1647820800&Signature=NhlkpIpR6qN9L7m7-pfHBq5CIZ2ouCnC5HnoqWJpGwg2X3bxKw0PwdqbD6pOVC2bkh1EZhALlq6bRzlzhi-PAkP-A2GCTYJW-LwDXss3DDreysAOAoHToqPOAvt-h6bH13-2kYc4b9gPVUbWBAZ5x-cM0-daiEht7K5elJyh26MXyyqN~lVcQKoZCkW4fk9PQZqALMNW8fAXsCFJLS3rc17Wb~Y-OJKdvCRZBZtWQCzO~7xh~moTdznh1VdqxF2U-gXam~PNA~Lxf1ixzgktPPOeX1DuZmEwbcbjjDpDdEIjApJ4stSg-KicKlNrx9Fbe5PfNY0~QXmcBKi0pCwbgA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA');
     background-size: 100% 100%;
     background-position: top right;
     background-repeat: no-repeat;
@@ -10,8 +11,7 @@
     align-items: center;
 
     .banner-content {
-      position: absolute;
-      left: 80px;
+      padding-left: 80px;
 
       .banner-content-title {
         font-family: $font-poppins;

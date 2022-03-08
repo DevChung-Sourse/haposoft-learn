@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./public/css/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./public/css/app.css">
 
 </head>
 
@@ -32,7 +32,7 @@
 
         <!-- Begin banner -->
         <div class="banner">
-            <div class="banner-bg" style="background-image: url('./images/Hapo_Learn_banner_1.png');">
+            <div class="banner-bg" >
                 <div class="banner-content">
                     <p class="banner-content-title">Learn Anytime, Anywhere</p>
                     <p class="banner-content-subtitle">at HapoLearn <img src="./images/Hapo_learn-icon.png"
@@ -50,7 +50,7 @@
         <div class="card-list">
             <div class="card-item">
                 <div class="card-img card-html-bg">
-                    <img src="./images/Hapo_learn_list_course_html_css_js.png" class="card-box-img" alt="...">
+                    <img src="./images/Hapo_learn_list_course_html_css_js.png" class="card-box-img" alt="Ảnh html css js">
                 </div>
                 <div class="card-content">
                     <h5 class="card-content-title">HTML/CSS/js Tutorial</h5>
@@ -61,7 +61,7 @@
             </div>
             <div class="card-item">
                 <div class="card-img card-lavarel-bg">
-                    <img src="./images/Hapo_learn_list_course_lavarel.png" class="card-box-img" alt="...">
+                    <img src="./images/Hapo_learn_list_course_lavarel.png" class="card-box-img" alt="Ảnh lavarel">
                 </div>
                 <div class="card-content">
                     <h5 class="card-content-title">HTML/CSS/js Tutorial</h5>
@@ -72,7 +72,7 @@
             </div>
             <div class="card-item">
                 <div class="card-img card-php-bg">
-                    <img src="./images/Hapo_learn_list_course_php.png" class="card-box-img" alt="...">
+                    <img src="./images/Hapo_learn_list_course_php.png" class="card-box-img" alt="Ảnh php">
                 </div>
                 <div class="card-content">
                     <h5 class="card-content-title">HTML/CSS/js Tutorial</h5>
@@ -90,10 +90,10 @@
             <div class="card-list other-courses-list">
                 <div class="card-item">
                     <div class="card-img card-html-bg">
-                        <img src="./images/Hapo_learn_list_course_html_css_js.png" class="card-box-img" alt="...">
+                        <img src="./images/Hapo_learn_list_course_html_css_js.png" class="card-box-img" alt="Ảnh html css js">
                     </div>
                     <div class="card-content">
-                        <h5 class="card-content-title">HTML/CSS/js Tutorial</h5>
+                        <p class="card-content-title">HTML/CSS/js Tutorial</p>
                         <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New
                             Media. I had coded quite a bit, but never touched...</p>
                         <a href="" class="card-btn btn">Take This Course</a>
@@ -101,10 +101,10 @@
                 </div>
                 <div class="card-item">
                     <div class="card-img card-lavarel-bg">
-                        <img src="./images/Hapo_learn_list_course_lavarel.png" class="card-box-img" alt="...">
+                        <img src="./images/Hapo_learn_list_course_lavarel.png" class="card-box-img" alt="Ảnh lavarel">
                     </div>
                     <div class="card-content">
-                        <h5 class="card-content-title">HTML/CSS/js Tutorial</h5>
+                        <p class="card-content-title">HTML/CSS/js Tutorial</p>
                         <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New
                             Media. I had coded quite a bit, but never touched...</p>
                         <a href="" class="card-btn btn">Take This Course</a>
@@ -112,10 +112,10 @@
                 </div>
                 <div class="card-item">
                     <div class="card-img card-php-bg">
-                        <img src="./images/Hapo_learn_list_course_php.png" class="card-box-img" alt="...">
+                        <img src="./images/Hapo_learn_list_course_php.png" class="card-box-img" alt="Ảnh php">
                     </div>
                     <div class="card-content">
-                        <h5 class="card-content-title">HTML/CSS/js Tutorial</h5>
+                        <p class="card-content-title">HTML/CSS/js Tutorial</p>
                         <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New
                             Media. I had coded quite a bit, but never touched...</p>
                         <a href="" class="card-btn btn">Take This Course</a>
@@ -127,7 +127,51 @@
         <!-- End other courses -->
 
         <!-- Begin why learn -->
-        
+        <div class="why">
+            <div class="why-macbook-1">
+                <img src="./images/Hapo_learn_why_learn_macbook.png" alt="ảnh macbook" class="why-macbook-1-img">
+            </div>
+            <div class="why-title">
+                <p class="why-title-text">
+                    Why HapoLearn?
+                </p>
+            </div>
+            <div class="why-content">
+                <p class="why-content-desc">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span class="why-content-desc-text">
+                        Interactive lessons, "on-the-go" practice, peer support.
+                    </span>
+                </p>
+                <p class="why-content-desc">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span class="why-content-desc-text">
+                        Interactive lessons, "on-the-go" practice, peer support.
+                    </span>
+                </p>
+                <p class="why-content-desc">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span class="why-content-desc-text">
+                        Interactive lessons, "on-the-go" practice, peer support.
+                    </span>
+                </p>
+                <p class="why-content-desc">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span class="why-content-desc-text">
+                        Interactive lessons, "on-the-go" practice, peer support.
+                    </span>
+                </p>
+                <p class="why-content-desc">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span class="why-content-desc-text">
+                        Interactive lessons, "on-the-go" practice, peer support.
+                    </span>
+                </p>
+            </div>
+            <div class="why-macbook-2">
+                <img src="./images/Hapo_learn_why_learn_macbook_2.png" alt="ảnh macbook" class="why-macbook-2-img">
+            </div>
+        </div>
         <!-- End why learn -->
     </div>
 
