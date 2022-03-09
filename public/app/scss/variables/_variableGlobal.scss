@@ -1,18 +1,14 @@
-//Import font-family
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@200;300;400;500;600&display=swap");
 
-//Khai báo giá font chữ
 $font-opensans: "Open Sans", sans-serif;
 $font-poppins: "Poppins", sans-serif;
 
-//Khai báo color
 $color-default: #505353;
 $color-title: #11114e;
 $color-btn: #ffffff;
 $color-message: #b2b2b2;
 $color-title-card: #d2d235;
 
-//Khai báo background color
 $background-html: #3f6185;
 $background-lavarel: #dc594c;
 $background-php: #556598;
@@ -22,7 +18,6 @@ $background-java: #1b75bb;
 $background-style: #b2d235;
 $background-footer: #505353;
 
-//html
 html {
   margin: 0;
   padding: 0;

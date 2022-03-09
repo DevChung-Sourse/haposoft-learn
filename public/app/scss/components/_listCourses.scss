@@ -79,31 +79,30 @@
     margin: 0 auto;
     margin-top: 50px;
     @include flexLayout(space-between);
+  }
+  .card-item {
+    width: 370px;
+    height: 470px;
 
-    .card-item {
-      width: 370px;
-      height: 470px;
+    .card-img {
+      height: 215px;
+    }
 
-      .card-img {
-        height: 215px;
+    .card-content {
+      .card-content-decs {
+        width: 300px;
+        text-align: center;
+        margin: 10px auto;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
       }
 
-      .card-content {
-        .card-content-decs {
-          width: 300px;
-          text-align: center;
-          margin: 10px auto;
-          font-size: 14px;
-          font-weight: 700;
-          line-height: 20px;
-        }
-
-        .card-btn {
-          width: 200px;
-          height: 40px;
-          font-size: 20px;
-          line-height: 40px;
-        }
+      .card-btn {
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+        line-height: 40px;
       }
     }
   }
@@ -116,37 +115,37 @@
     margin: 0 auto;
     margin-top: 50px;
     @include flexLayout(space-between);
+  }
 
-    .card-item {
-      width: 225px;
-      height: 300px;
+  .card-item {
+    width: 225px;
+    height: 300px;
 
-      .card-img {
-        height: 131px;
+    .card-img {
+      height: 131px;
+    }
+
+    .card-content {
+      .card-content-title {
+        margin-top: 10px;
+        font-size: 20px;
       }
 
-      .card-content {
-        .card-content-title {
-          margin-top: 10px;
-          font-size: 20px;
-        }
+      .card-content-decs {
+        width: 200px;
+        margin: 0 auto;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.05em;
+      }
 
-        .card-content-decs {
-          width: 200px;
-          margin: 0 auto;
-          font-size: 14px;
-          font-weight: 500;
-          line-height: 18px;
-          letter-spacing: -0.05em;
-        }
-
-        .card-btn {
-          width: 115px;
-          height: 25px;
-          font-size: 10px;
-          line-height: 25px;
-          margin-top: 12px;
-        }
+      .card-btn {
+        width: 115px;
+        height: 25px;
+        font-size: 10px;
+        line-height: 25px;
+        margin-top: 12px;
       }
     }
   }
@@ -159,37 +158,37 @@
     margin: 0 auto;
     margin-top: 50px;
     @include flexLayout(space-between);
+  }
 
-    .card-item {
-      width: 170px;
-      height: 230px;
+  .card-item {
+    width: 170px;
+    height: 230px;
 
-      .card-img {
-        height: 90px;
+    .card-img {
+      height: 90px;
+    }
+
+    .card-content {
+      .card-content-title {
+        margin-top: 10px;
+        font-size: 12px;
       }
 
-      .card-content {
-        .card-content-title {
-          margin-top: 10px;
-          font-size: 12px;
-        }
+      .card-content-decs {
+        width: 150px;
+        margin: 0 auto;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.05em;
+      }
 
-        .card-content-decs {
-          width: 150px;
-          margin: 0 auto;
-          font-size: 10px;
-          font-weight: 500;
-          line-height: 18px;
-          letter-spacing: -0.05em;
-        }
-
-        .card-btn {
-          width: 115px;
-          height: 25px;
-          font-size: 10px;
-          line-height: 25px;
-          margin-top: 12px;
-        }
+      .card-btn {
+        width: 115px;
+        height: 25px;
+        font-size: 10px;
+        line-height: 25px;
+        margin-top: 12px;
       }
     }
   }
@@ -204,38 +203,37 @@
     top: 210px;
     display: flex;
     flex-direction: column;
+  }
+  .card-item {
+    width: 70%;
+    height: 350px;
+    margin-bottom: 40px;
 
-    .card-item {
-      width: 70%;
-      height: 350px;
-      margin-bottom: 40px;
+    .card-img {
+      height: 50%;
+    }
 
-      .card-img {
-        height: 50%;
+    .card-content {
+      .card-content-title {
+        margin-top: 10px;
+        font-size: 12px;
       }
 
-      .card-content {
-        .card-content-title {
-          margin-top: 10px;
-          font-size: 12px;
-        }
+      .card-content-decs {
+        width: 150px;
+        margin: 0 auto;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.05em;
+      }
 
-        .card-content-decs {
-          width: 150px;
-          margin: 0 auto;
-          font-size: 10px;
-          font-weight: 500;
-          line-height: 18px;
-          letter-spacing: -0.05em;
-        }
-
-        .card-btn {
-          width: 115px;
-          height: 25px;
-          font-size: 10px;
-          line-height: 25px;
-          margin-top: 12px;
-        }
+      .card-btn {
+        width: 115px;
+        height: 25px;
+        font-size: 10px;
+        line-height: 25px;
+        margin-top: 12px;
       }
     }
   }

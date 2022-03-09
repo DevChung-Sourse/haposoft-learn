@@ -1,7 +1,7 @@
 .other-courses {
-  @include flexLayout();
   flex-direction: column;
   margin-top: 100px;
+  @include flexLayout();
 
   .other-courses-title {
     font-weight: 800;

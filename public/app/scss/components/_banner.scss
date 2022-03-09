@@ -131,10 +131,12 @@
   .banner-bg {
     max-height: 250px;
     background-size: 120%, 100%;
+    position: relative;
 
     .banner-content {
-      left: 60px;
       top: 250px;
+      position: absolute;
+      padding-left: 80px;
 
       .banner-content-title {
         font-size: 26px;
@@ -146,10 +148,6 @@
         font-size: 26px;
         letter-spacing: -5%;
         margin-bottom: 0;
-
-        img {
-          width: 26px;
-        }
       }
 
       .banner-content-desc {
@@ -164,6 +162,10 @@
       }
     }
   }
+
+  .banner-icon-owl {
+    width: 26px;
+  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -172,8 +174,8 @@
     background-size: 120%, 100%;
 
     .banner-content {
-      left: 35px;
       top: 205px;
+      padding-left: 55px;
 
       .banner-content-title {
         font-size: 20px;
@@ -183,10 +185,6 @@
       .banner-content-subtitle {
         font-size: 20px;
         margin-bottom: 0;
-
-        img {
-          width: 20px;
-        }
       }
 
       .banner-content-desc {
@@ -200,5 +198,9 @@
         font-size: 16px;
       }
     }
+  }
+
+  .banner-icon-owl {
+    width: 20px;
   }
 }
