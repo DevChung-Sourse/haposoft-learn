@@ -1,0 +1,242 @@
+.card-list {
+  width: 90%;
+  height: 570px;
+  margin: 0 auto;
+  margin-top: 50px;
+  @include flexLayout(space-between);
+}
+
+.card-item {
+  width: 470px;
+  height: 570px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #00000040;
+
+  .card-img {
+    width: 100%;
+    height: 275px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+
+    &.card-html-bg {
+      background-color: $background-html;
+    }
+
+    &.card-lavarel-bg {
+      background-color: $background-lavarel;
+    }
+
+    &.card-php-bg {
+      background-color: $background-php;
+    }
+
+    .card-box-img {
+      width: 50%;
+    }
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .card-content-title {
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 25px;
+      margin-bottom: 0;
+      color: $color-title-card;
+    }
+
+    .card-content-decs {
+      width: 350px;
+      text-align: center;
+      margin: 20px auto;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: -5%;
+    }
+
+    .card-btn {
+      width: 300px;
+      height: 50px;
+      font-size: 22px;
+      line-height: 50px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 1644px) {
+  .card-list {
+    width: 90%;
+    height: 470px;
+    margin: 0 auto;
+    margin-top: 50px;
+    @include flexLayout(space-between);
+  }
+
+  .card-item {
+    width: 370px;
+    height: 470px;
+
+    .card-img {
+      height: 215px;
+    }
+
+    .card-content {
+      .card-content-decs {
+        width: 300px;
+        text-align: center;
+        margin: 10px auto;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+      }
+
+      .card-btn {
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1330px) {
+  .card-list {
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+    @include flexLayout(space-between);
+  }
+
+  .card-item {
+    width: 225px;
+    height: 300px;
+
+    .card-img {
+      height: 131px;
+    }
+
+    .card-content {
+      .card-content-title {
+        margin-top: 10px;
+        font-size: 20px;
+      }
+
+      .card-content-decs {
+        width: 200px;
+        margin: 0 auto;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.05em;
+      }
+
+      .card-btn {
+        width: 115px;
+        height: 25px;
+        font-size: 10px;
+        line-height: 25px;
+        margin-top: 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 816px) {
+  .card-list {
+    width: 90%;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    @include flexLayout(space-between);
+  }
+
+  .card-item {
+    width: 170px;
+    height: 230px;
+
+    .card-img {
+      height: 90px;
+    }
+
+    .card-content {
+      .card-content-title {
+        margin-top: 10px;
+        font-size: 12px;
+      }
+
+      .card-content-decs {
+        width: 150px;
+        margin: 0 auto;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.05em;
+      }
+
+      .card-btn {
+        width: 115px;
+        height: 25px;
+        font-size: 10px;
+        line-height: 25px;
+        margin-top: 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .card-list {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    top: 210px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-item {
+    width: 70%;
+    height: 350px;
+    margin-bottom: 40px;
+
+    .card-img {
+      height: 50%;
+    }
+
+    .card-content {
+      .card-content-title {
+        margin-top: 10px;
+        font-size: 12px;
+      }
+
+      .card-content-decs {
+        width: 150px;
+        margin: 0 auto;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.05em;
+      }
+
+      .card-btn {
+        width: 115px;
+        height: 25px;
+        font-size: 10px;
+        line-height: 25px;
+        margin-top: 12px;
+      }
+    }
+  }
+}

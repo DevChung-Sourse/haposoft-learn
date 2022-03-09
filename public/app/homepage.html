@@ -1,26 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/app.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./public/css/app.css">
+
 </head>
+
 <body>
-    <h1>Đây là đoạn nhúc mã javascript</h1>
-    <!-- Lí do nhúng đoạn script ở cuối của file html là vì khi ta chạy đoạn code thì file html sẽ render từ trên xuống dười
-        Nếu ta nhúng file script ở trên phần header thì khi trình phiên dịch đọc đến đoạn code js thì sẽ mất thời gian để render đoạn mã trong đó
-        nên sẽ làm cho mã html ở trong phần body render chậm hơn nên sẽ gây ra hiện tượng trang web render ra giao diện người dùng chậm hơn.
-        Còn nếu ta cho đoạn mã Script ở cuối của phần body thì đoạn mã sẽ được đọc cuối cùng, không gây ảnh hưởng đến hiệu năng render của trang 
-        web của chúng ta.
-        ---------------Để khắc phục hiệu năng khi để đoạn script tại head--------------
-        -để khắc phục khi mà thêm đoạn script vào trong trang web tại phần head thì ta sẽ cho thêm 1 attibute là defer
-        --Ví dụ:
-        <script src="../js/app.js" defer></script>
-        
-    -->
-    <script src="../js/app.js"></script>
+    <div class="container">
+        <!-- Begin navigation bar -->
+        <div class="nav">
+            <div class="nav-box">
+                <img src="./images/logo_hapolearn.png" alt="Logo haposoft learn" class="nav-box-img">
+            </div>
+            <ul class="nav-menu" id="menu">
+                <li class="nav-menu-item"><a href="#" class="nav-menu-item-link">Home</a></li>
+                <li class="nav-menu-item active"><a href="#" class="nav-menu-item-link">All courses</a></li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-item-link">Login/register</a></li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-item-link">Profile</a></li>
+            </ul>
+            <div class="nav-icon"><i class="fa-solid fa-bars nav-bar-icon"></i></div>
+        </div>
+        <!-- End navigation bar -->
+
+        <!-- Begin banner -->
+        <div class="banner">
+            <div class="banner-bg" >
+                <div class="banner-content">
+                    <p class="banner-content-title">Learn Anytime, Anywhere</p>
+                    <p class="banner-content-subtitle">at HapoLearn <img src="./images/hapo_learn_icon.png"
+                            alt="icon con cú!" class="banner-icon-owl"> !</p>
+                    <p class="banner-content-desc">
+                        Interactive lessons. "on-the-top"<br>practice, per supports
+                    </p>
+                    <button class="banner-content-btn btn">Start Learn Now</button>
+                </div>
+            </div>
+        </div>
+        <!-- End banner -->
+
+        <!-- Begin list course -->
+        <div class="card-list">
+            <div class="card-item">
+                <div class="card-img card-html-bg">
+                    <img src="./images/hapo_learn_list_course_html_css_js.png" class="card-box-img" alt="Ảnh html css js">
+                </div>
+                <div class="card-content">
+                    <p class="card-content-title">HTML/CSS/js Tutorial</p>
+                    <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New
+                        Media. I had coded quite a bit, but never touched...</p>
+                    <a href="" class="card-btn btn">Take This Course</a>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="card-img card-lavarel-bg">
+                    <img src="./images/hapo_learn_list_course_lavarel.png" class="card-box-img" alt="Ảnh lavarel">
+                </div>
+                <div class="card-content">
+                    <p class="card-content-title">HTML/CSS/js Tutorial</p>
+                    <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New
+                        Media. I had coded quite a bit, but never touched...</p>
+                    <a href="" class="card-btn btn">Take This Course</a>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="card-img card-php-bg">
+                    <img src="./images/hapo_learn_list_course_php.png" class="card-box-img" alt="Ảnh php">
+                </div>
+                <div class="card-content">
+                    <p class="card-content-title">HTML/CSS/js Tutorial</p>
+                    <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New
+                        Media. I had coded quite a bit, but never touched...</p>
+                    <a href="" class="card-btn btn">Take This Course</a>
+                </div>
+            </div>
+        </div>
+        <!-- End list course -->
+
+        <!-- Begin other courses -->
+        <div class="other-courses">
+            <div class="other-courses-title">Other Courses</div>
+            <div class="card-list other-courses-list">
+                <div class="card-item">
+                    <div class="card-img card-html-bg">
+                        <img src="./images/hapo_learn_list_course_html_css_js.png" class="card-box-img" alt="Ảnh html css js">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-content-title">HTML/CSS/js Tutorial</p>
+                        <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New
+                            Media. I had coded quite a bit, but never touched...</p>
+                        <a href="" class="card-btn btn">Take This Course</a>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-img card-lavarel-bg">
+                        <img src="./images/hapo_learn_list_course_lavarel.png" class="card-box-img" alt="Ảnh lavarel">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-content-title">HTML/CSS/js Tutorial</p>
+                        <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New
+                            Media. I had coded quite a bit, but never touched...</p>
+                        <a href="" class="card-btn btn">Take This Course</a>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-img card-php-bg">
+                        <img src="./images/hapo_learn_list_course_php.png" class="card-box-img" alt="Ảnh php">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-content-title">HTML/CSS/js Tutorial</p>
+                        <p class="card-content-decs">I knew hardly anything about HTML, JS, and CSS before entering New
+                            Media. I had coded quite a bit, but never touched...</p>
+                        <a href="" class="card-btn btn">Take This Course</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="other-courses-link">View All Our Courses <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+        <!-- End other courses -->
+    </div>
+
+    <script src="./js/app.js"></script>
 </body>
 </html>
