@@ -35,9 +35,12 @@
   .other-courses {
     position: relative;
     top: 180px;
+    height: 1300px;
 
     .other-courses-title {
       font-size: 40px;
+      position: absolute;
+      top: 0;
     }
 
     .other-courses-list {
