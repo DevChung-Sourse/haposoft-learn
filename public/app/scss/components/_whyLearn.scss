@@ -6,13 +6,13 @@
   margin-top: 100px;
   position: relative;
 
-  .why-macbook-1 {
+  .why-a-macbook {
     display: inline-block;
     position: absolute;
     top: -250px;
     width: 480px;
 
-    .why-macbook-1-img {
+    .why-a-macbook-img {
       width: 100%;
     }
   }
@@ -50,14 +50,14 @@
     }
   }
 
-  .why-macbook-2 {
+  .why-macbook-devices {
     float: right;
     display: flex;
     align-items: center;
     height: 100%;
     width: 50%;
 
-    .why-macbook-2-img {
+    .why-macbook-devices-img {
       width: 100%;
     }
   }
@@ -67,7 +67,7 @@
   .why {
     height: 800px;
 
-    .why-macbook-1 {
+    .why-a-macbook {
       top: -210px;
       width: 400px;
     }
@@ -112,7 +112,7 @@
   .why {
     height: 600px;
 
-    .why-macbook-1 {
+    .why-a-macbook {
       top: -185px;
       width: 350px;
     }
@@ -141,7 +141,7 @@
   .why {
     height: 400px;
 
-    .why-macbook-1 {
+    .why-a-macbook {
       width: 30%;
       top: -150px;
     }
@@ -161,7 +161,7 @@
       }
     }
 
-    .why-macbook-2 {
+    .why-macbook-devices {
       height: auto;
       width: 40%;
       position: absolute;
@@ -175,7 +175,7 @@
   .why {
     height: 100%;
 
-    .why-macbook-1 {
+    .why-a-macbook {
       top: -90px;
     }
 
@@ -198,12 +198,12 @@
       }
     }
 
-    .why-macbook-2 {
+    .why-macbook-devices {
       width: 100%;
       bottom: 0;
       justify-content: center;
 
-      .why-macbook-2-img {
+      .why-macbook-devices-img {
         width: 60%;
       }
     }
@@ -214,8 +214,8 @@
   .why {
     top: 150px;
 
-    .why-macbook-2 {
-      .why-macbook-2-img {
+    .why-macbook-devices {
+      .why-macbook-devices-img {
         width: 80%;
       }
     }
@@ -224,7 +224,7 @@
 
 @media only screen and (max-width: 450px) {
   .why {
-    .why-macbook-1 {
+    .why-a-macbook {
       width: 40%;
     }
 
@@ -243,8 +243,8 @@
       }
     }
 
-    .why-macbook-2 {
-      .why-macbook-2-img {
+    .why-macbook-devices {
+      .why-macbook-devices-img {
         width: 80%;
       }
     }
