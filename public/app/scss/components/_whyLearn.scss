@@ -1,0 +1,252 @@
+.why {
+  background-image: url("https://s3-alpha-sig.figma.com/img/c558/56f1/074a76c0613b7249fa2847b58b2160cd?Expires=1647820800&Signature=D4h8p4Fp1bXnsCEMB20API6aUomP8uE6v2u9xM-Sfj0tAH69oIBZES95JuT8u2y80aupUbcEcNokObgzQj~ifbT6Ny-TLlX0NfVnJ1BD8zVYW90w52fpwevvjMOcGiQNkw1yqtzoCxF6orfOWbm-W2MBEoaHTNQ0DhztfWjLN1HSebcQcKtWYuaulfYkuL2-BZZNyl5wNDqO~nuosdHsB3ILLOhCwDFy1CAPGgBYWWcBKwal7Aw8AN1v~6utg4gYqdv1gbcE2fIWG1pz~6OM4JaI8rX-oDqd7yVaBcWFfxq1rnwmFeqHp6ktl4rX0BCu4Uo5pi73TM0YZy-s8SamBQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  background-repeat: no-repeat;
+  background-size: cover, contain;
+  height: 900px;
+  margin-top: 100px;
+  position: relative;
+
+  .why-macbook-1 {
+    display: inline-block;
+    position: absolute;
+    top: -250px;
+    width: 480px;
+
+    .why-macbook-1-img {
+      width: 100%;
+    }
+  }
+
+  .why-title {
+    display: inline-block;
+    position: absolute;
+    top: 340px;
+    left: 5rem;
+
+    .why-title-text {
+      font-size: 90px;
+      font-weight: 700;
+      color: $color-btn;
+      margin: 0;
+    }
+  }
+
+  .why-content {
+    display: inline-block;
+    position: absolute;
+    top: 440px;
+    left: 6.5rem;
+  }
+
+  .why-content-desc {
+    color: $color-why-learn;
+    font-size: 24px;
+    letter-spacing: -0.05em;
+    margin-bottom: 40px;
+
+    .why-content-desc-text {
+      font-weight: 400;
+      padding-left: 12px;
+    }
+  }
+
+  .why-macbook-2 {
+    float: right;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+
+    .why-macbook-2-img {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .why {
+    height: 800px;
+
+    .why-macbook-1 {
+      top: -210px;
+      width: 400px;
+    }
+
+    .why-title {
+      top: 270px;
+
+      .why-title-text {
+        font-size: 70px;
+      }
+    }
+
+    .why-content {
+      top: 350px;
+    }
+
+    .why-content-desc {
+      font-size: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .why {
+    height: 700px;
+
+    .why-title {
+      top: 270px;
+
+      .why-title-text {
+        font-size: 60px;
+      }
+    }
+
+    .why-content-desc {
+      font-size: 16px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .why {
+    height: 600px;
+
+    .why-macbook-1 {
+      top: -185px;
+      width: 350px;
+    }
+
+    .why-title {
+      top: 270px;
+
+      .why-title-text {
+        font-size: 50px;
+      }
+    }
+
+    .why-content {
+      top: 330px;
+      left: 5.5rem;
+    }
+
+    .why-content-desc {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+@media only screen and (max-width: 910px) {
+  .why {
+    height: 400px;
+
+    .why-macbook-1 {
+      width: 30%;
+      top: -150px;
+    }
+
+    .why-title {
+      top: 20px;
+      left: 180px;
+    }
+
+    .why-content {
+      width: 60%;
+      left: 1.5rem;
+      top: 136px;
+
+      .why-content-desc-text {
+        font-size: 16px;
+      }
+    }
+
+    .why-macbook-2 {
+      height: auto;
+      width: 40%;
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .why {
+    height: 100%;
+
+    .why-macbook-1 {
+      top: -90px;
+    }
+
+    .why-title {
+      .why-title-text {
+        font-size: 30px;
+      }
+    }
+
+    .why-content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      left: 0;
+
+      .why-content-desc {
+        font-size: 14px;
+      }
+    }
+
+    .why-macbook-2 {
+      width: 100%;
+      bottom: 0;
+      justify-content: center;
+
+      .why-macbook-2-img {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .why {
+    top: 150px;
+
+    .why-macbook-2 {
+      .why-macbook-2-img {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .why {
+    .why-macbook-1 {
+      width: 40%;
+    }
+
+    .why-title {
+      left: 55%;
+      transform: translateX(-50%);
+
+      .why-title-text {
+        font-size: 40px;
+      }
+    }
+
+    .why-content {
+      .why-content-desc-text {
+        font-size: 12px;
+      }
+    }
+
+    .why-macbook-2 {
+      .why-macbook-2-img {
+        width: 80%;
+      }
+    }
+  }
+}
