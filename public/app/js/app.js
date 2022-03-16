@@ -1,3 +1,4 @@
+$(document).ready(() => {
 const navBarIcon = document.querySelector(".nav-bar-icon")
 const menu = document.querySelector("#menu")
 
@@ -5,7 +6,6 @@ navBarIcon.addEventListener("click", () => {
   menu.classList.toggle("active-menu")
 })
 
-$(document).ready(() => {
   $('.feedback-carousel').slick({
     infinite: true,
     slidesToShow: 2,
@@ -27,5 +27,10 @@ $(document).ready(() => {
           slidesToScroll: 1
         }
       }]
+  })
+
+  $('.contact-logo').click(function () {
+    $('.contact-logo > a').toggleClass('contact-active')
+    $('.info-contact').toggleClass('info-contact-active')
   })
 })
