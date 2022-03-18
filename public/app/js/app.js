@@ -31,8 +31,7 @@ $(document).ready(() => {
   })
 
   const login = $('#login')
-  const register = $('#register')
-  
+  const register = $('#register')  
   const formLogin = $('#formLogin')
   const formRegister = $('#formRegister')
 

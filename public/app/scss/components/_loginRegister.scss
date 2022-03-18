@@ -146,15 +146,16 @@
   }
 }
 
-.btn-close {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  width: 30px;
-  height: 30px;
-  background-color: #b2d235 !important;
-  border-radius: 50%;
-  color: #fff;
-  opacity: 1;
+.form {
+  button.btn-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    background-color: #b2d235;
+    border-radius: 50%;
+    color: #fff;
+    opacity: 1;
+  }
 }
-
