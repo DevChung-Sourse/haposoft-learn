@@ -1,0 +1,160 @@
+.form {
+  width: 100%;
+  height: 90vh;
+  background-color: $color-why-learn;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  position: relative;
+
+  .form-switch {
+    width: 100%;
+    height: 70px;
+    color: $color-title-card;
+    display: flex;
+    align-items: center;
+
+    .form-lr {
+      width: 50%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      border: 1px solid #b2d235;
+    }
+
+    a {
+      color: $color-title-card;
+      font-size: 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    p.active-lr {
+      background-color: #b2d235;
+    }
+
+    p.active-lr a {
+      color: $color-btn;
+    }
+  }
+}
+
+.form-current {
+  margin-top: 30px;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+  }
+
+  .form-group {
+    width: 100%;
+
+    label {
+      font-size: 20px;
+      color: #505353;
+      font-weight: 700;
+    }
+
+    input {
+      height: 60px;
+    }
+  }
+
+  .check {
+    width: 100%;
+
+    .text {
+      float: right;
+      font-size: 14px;
+      color: #b2d235;
+      border-bottom: 1px solid #b2d235;
+    }
+  }
+
+  .btn-login {
+    width: 80%;
+    height: 50px;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0 auto;
+  }
+}
+
+.active-display {
+  display: flex;
+}
+
+.login-with {
+  width: 100%;
+  margin-top: 20px;
+  border-top: 1px solid #dbdbdb;
+  position: relative;
+
+  .login-with-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #505353;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: -16px;
+    background-color: #fff;
+  }
+
+  .login-with-social {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+  }
+
+  .btn-login-with {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 10px;
+    border: none;
+  }
+
+  .btn-google {
+    background-color: #dc4e41;
+  }
+
+  .btn-facebook {
+    background-color: #3b5999;
+  }
+
+  .icon {
+    font-size: 30px;
+    color: #fff;
+  }
+
+  span {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+  }
+}
+
+.btn-close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background-color: #b2d235 !important;
+  border-radius: 50%;
+  color: #fff;
+  opacity: 1;
+}
+
