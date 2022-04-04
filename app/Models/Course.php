@@ -16,7 +16,8 @@ class Course extends Model
         'price',
     ];
 
-    public function courseTeachers() {
+    public function courseTeachers()
+    {
         return $this->belongsToMany(User::class, 'teacher_courses', 'course_id', 'user_id');
     }
 
@@ -25,7 +26,8 @@ class Course extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function courseUsers() {
+    public function courseUsers()
+    {
         return $this->belongsToMany(User::class, 'user_courses', 'course_id', 'user_id');
     }
     /**
@@ -33,7 +35,8 @@ class Course extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function courseTags() {
+    public function courseTags()
+    {
         return $this->belongsToMany(Tag::class, 'course_tags', 'course_id', 'tag_id');
     }
     /**
@@ -41,7 +44,8 @@ class Course extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function reviewCourses() {
+    public function reviewCourses()
+    {
         return $this->hasMany(Review::class, 'course_id');
     }
 }

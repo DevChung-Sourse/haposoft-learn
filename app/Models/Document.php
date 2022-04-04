@@ -19,7 +19,8 @@ class Document extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function lessonDocument() {
+    public function lessonDocument()
+    {
         return $this->belongsTo(Lesson::class, 'lesson_id');
     }
 }

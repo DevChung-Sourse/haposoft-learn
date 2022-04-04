@@ -44,7 +44,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function teacherCourses () {
+    public function teacherCourses()
+    {
         return $this->belongsToMany(Course::class, 'teacher_courses', 'user_id', 'course_id');
     }
 
@@ -53,7 +54,8 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function userCourses() {
+    public function userCourses()
+    {
         return $this->belongsToMany(Course::class, 'user_courses', 'user_id', 'course_id');
     }
     /**
@@ -61,7 +63,8 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function userLessons() {
+    public function userLessons()
+    {
         return $this->belongsToMany(Lesson::class, 'user_lessons', 'user_id', 'lesson_id');
     }
 
@@ -70,7 +73,8 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function reviews() {
+    public function reviews()
+    {
         return $this->hasMany(Review::class, 'user_id');
     }
 }

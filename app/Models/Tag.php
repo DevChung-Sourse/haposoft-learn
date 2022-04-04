@@ -18,7 +18,8 @@ class Tag extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function course() {
+    public function course()
+    {
         return $this->belongsToMany(Course::class, 'course_tags', 'tag_id', 'course_id');
     }
 }
