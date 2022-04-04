@@ -10,10 +10,12 @@ class Tag extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
     protected $fillable = [
         'title',
         'link',
     ];
+
     /**
      * The roles that belong to the Tag
      *

@@ -31,6 +31,7 @@ class Course extends Model
     {
         return $this->belongsToMany(User::class, 'user_courses', 'course_id', 'user_id');
     }
+
     /**
      * The roles that belong to the Course
      *
@@ -40,6 +41,7 @@ class Course extends Model
     {
         return $this->belongsToMany(Tag::class, 'course_tags', 'course_id', 'tag_id');
     }
+
     /**
      * Get all of the comments for the Course
      *

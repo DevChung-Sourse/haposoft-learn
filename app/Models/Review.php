@@ -10,16 +10,19 @@ class Review extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
     protected $fillable = [
         'vote',
         'comments',
         'user_id',
         'course_id',
     ];
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
     /**
      * Get the user that owns the Review
      *

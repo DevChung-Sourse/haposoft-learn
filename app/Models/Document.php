@@ -10,11 +10,13 @@ class Document extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
     protected $fillable = [
         'file_path',
         'title',
         'type',
     ];
+
     /**
      * Get the user that owns the Document
      *
