@@ -22,7 +22,7 @@ class Lesson extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function course(): BelongsTo
+    public function course()
     {
         return $this->belongsTo(Course::class, 'course_id');
     }
@@ -32,7 +32,7 @@ class Lesson extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function users(): BelongsToMany
+    public function users()
     {
         return $this->belongsToMany(User::class, 'user_lessons', 'lesson_id', 'user_id');
     }
@@ -42,7 +42,7 @@ class Lesson extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function documents(): HasMany
+    public function documents()
     {
         return $this->hasMany(Document::class, 'lesson_id');
     }
