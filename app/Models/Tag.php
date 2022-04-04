@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Tag extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
     protected $fillable = [
         'title',
         'link',
@@ -18,7 +19,7 @@ class Tag extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function course()
+    public function courses()
     {
         return $this->belongsToMany(Course::class, 'course_tags', 'tag_id', 'course_id');
     }

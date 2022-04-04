@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Document extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
     protected $fillable = [
         'file_path',
         'title',
@@ -19,7 +20,7 @@ class Document extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function lessonDocument()
+    public function lesson()
     {
         return $this->belongsTo(Lesson::class, 'lesson_id');
     }
