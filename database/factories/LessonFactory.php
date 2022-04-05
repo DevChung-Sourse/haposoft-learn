@@ -17,10 +17,10 @@ class LessonFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->text($maxNbchar = 200),
+            'title' => $this->faker->text(),
             'description' => $this->faker->text(),
             'requirements' => $this->faker->text(),
-            'course_id' => $this->faker->numberBetween($min = 1, $max = 200),
+            'course_id' => $this->faker->numberBetween(1, 200),
         ];
     }
 }

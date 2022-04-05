@@ -29,10 +29,10 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => $this->faker->password(),
             'remember_token' => Str::random(10),
-            'birthday' => $this->faker->date('Y-m-d', $max = 'now'),
+            'birthday' => $this->faker->date(),
             'address' => $this->faker->country(),
             'phone' => $this->faker->tollFreePhoneNumber(),
-            'role' => $this->faker->numberBetween($min = 0, $max = 1),
+            'role' => $this->faker->numberBetween(0, 1),
             'job' => $this->faker->jobTitle(),
         ];
     }

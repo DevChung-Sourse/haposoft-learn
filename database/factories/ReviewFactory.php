@@ -17,10 +17,10 @@ class ReviewFactory extends Factory
     public function definition()
     {
         return [
-            'vote' => $this->faker->numberBetween($min = 1, $max = 5),
+            'vote' => $this->faker->numberBetween(1, 5),
             'comments' => $this->faker->text(),
-            'user_id' => $this->faker->numberBetween($min = 1, $max = 100),
-            'course_id' => $this->faker->numberBetween($min = 1, $max = 100),
+            'user_id' => $this->faker->numberBetween(1, 100),
+            'course_id' => $this->faker->numberBetween(1, 100),
         ];
     }
 }
