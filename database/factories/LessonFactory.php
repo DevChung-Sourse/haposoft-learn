@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Course;
+use App\Models\Lesson;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CourseFactory extends Factory
+class LessonFactory extends Factory
 {
-    protected $model = Course::class;
+    protected $model = Lesson::class;
 
     /**
      * Define the model's default state.
@@ -17,10 +17,10 @@ class CourseFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->title(),
-            'thumbnail' => $this->faker->imageUrl(300, 400),
+            'title' => $this->faker->text($maxNbchar = 200),
             'description' => $this->faker->text(),
-            'price' => $this->faker->numberBetween($min = 200, $max = 1000),
+            'requirements' => $this->faker->text(),
+            'course_id' => $this->faker->numberBetween($min = 1, $max = 200),
         ];
     }
 }

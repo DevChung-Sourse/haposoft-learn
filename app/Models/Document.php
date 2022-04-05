@@ -15,6 +15,7 @@ class Document extends Model
         'file_path',
         'title',
         'type',
+        'lesson_id',
     ];
 
     /**
