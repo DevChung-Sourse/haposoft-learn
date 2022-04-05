@@ -24,10 +24,16 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
+            'full_name' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => $this->faker->password(),
             'remember_token' => Str::random(10),
+            'birthday' => $this->faker->date('Y-m-d', $max = 'now'),
+            'address' => $this->faker->country(),
+            'phone' => $this->faker->tollFreePhoneNumber(),
+            'role' => $this->faker->numberBetween($min = 0, $max = 1),
+            'job' => $this->faker->jobTitle(),
         ];
     }
 
