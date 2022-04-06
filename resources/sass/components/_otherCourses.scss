@@ -1,0 +1,46 @@
+.other-courses {
+    flex-direction: column;
+    margin-top: 100px;
+    @include flexLayout();
+
+    .other-courses-title {
+        font-weight: 800;
+        font-size: 80px;
+        border-bottom: 5px solid $background-style;
+    }
+
+    .other-courses-link {
+        font-size: 40px;
+        font-weight: 700;
+        margin-top: 60px;
+        color: $background-style;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .other-courses {
+        margin-top: 60px;
+
+        .other-courses-title {
+            font-size: 50px;
+        }
+
+        .other-courses-link {
+            font-size: 28px;
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .other-courses {
+        .other-courses-title {
+            font-weight: 800;
+            font-size: 8.5vw;
+            border-bottom: 5px solid #b2d235;
+        }
+        .other-courses-link {
+            font-size: 5vw;
+            margin-top: 0;
+        }
+    }
+}

@@ -6,3 +6,21 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+//slick
+@import '~slick-carousel/slick/slick.scss';
+
+// fonts awesome
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+
+@import './varialables/variableGlobal';
+@import './components/header';
+@import './components/banner';
+@import './components/listCourses';
+@import './components/otherCourses';
+@import './components/whyLearn';
+@import './components/feedback';
+@import './components/startLearn';
+@import './components/statistic';
+@import './components/footer';
+@import './components/loginRegister';
