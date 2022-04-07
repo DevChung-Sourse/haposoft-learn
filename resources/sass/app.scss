@@ -1,18 +1,8 @@
-// Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
 @import 'variables';
-
-// Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-//slick
 @import '~slick-carousel/slick/slick.scss';
-
-// fonts awesome
 @import "node_modules/font-awesome/scss/font-awesome.scss";
-
 @import './varialables/variableGlobal';
 @import './components/header';
 @import './components/banner';

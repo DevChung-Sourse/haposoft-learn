@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-<!-- Begin banner -->
 <div class="banner">
     <div class="banner-bg"></div>
     <div class="banner-content">
@@ -15,9 +13,7 @@
     </div>
 
 </div>
-<!-- End banner -->
 
-<!-- Begin list course -->
 <div class="card-list">
     @foreach ($courses as $course)
     <div class="card-item">
@@ -32,9 +28,7 @@
     </div>
     @endforeach
 </div>
-<!-- End list course -->
 
-<!-- Begin other courses -->
 <div class="other-courses">
     <div class="other-courses-title">Other Courses</div>
     <div class="card-list other-courses-list">
@@ -53,9 +47,7 @@
     </div>
     <a href="#" class="other-courses-link">View All Our Courses <i class="fa-solid fa-arrow-right-long"></i></a>
 </div>
-<!-- End other courses -->
 
-<!-- Begin why learn -->
 <div class="why-learn">
     <div class="why-learn-a-macbook">
         <img src="./images/hapo_learn_why_learn_macbook.png" alt="ảnh macbook" class="why-learn-a-macbook-img">
@@ -101,9 +93,7 @@
         <img src="./images/hapo_learn_why_learn_macbook_2.png" alt="ảnh macbook" class="why-learn-macbook-devices-img">
     </div>
 </div>
-<!-- End why learn -->
 
-<!-- Begin feedback -->
 <div class="feedback other-courses">
     <div class="other-courses-title">Feedback</div>
     <div class="feedback-desc">
@@ -123,56 +113,21 @@
                 <div class="feedback-user-info">
                     <p class="feedback-user-info-name">{{ $review->user->full_name }}</p>
                     <p class="feedback-user-info-lang">{{ $review->user->job }}</p>
-                    @if ($review->vote === 1)
                     <div class="feedback-user-star">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_w.png" alt="star-white">
-                        <img src="./images/star_w.png" alt="star-white">
-                        <img src="./images/star_w.png" alt="star-white">
-                        <img src="./images/star_w.png" alt="star-white">
+                        @for($i = 1; $i <= $review->vote; $i++)
+                            <img src="./images/star_y.png" alt="star-yellow">
+                        @endfor
+                        @for($i = 5; $i > $review->vote; $i--)
+                            <img src="./images/star_w.png" alt="star-white">
+                        @endfor
                     </div>
-                    @elseif ($review->vote === 2)
-                    <div class="feedback-user-star">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_w.png" alt="star-white">
-                        <img src="./images/star_w.png" alt="star-white">
-                        <img src="./images/star_w.png" alt="star-white">
-                    </div>
-                    @elseif ($review->vote === 3)
-                    <div class="feedback-user-star">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_w.png" alt="star-white">
-                        <img src="./images/star_w.png" alt="star-white">
-                    </div>
-                    @elseif ($review->vote === 4)
-                    <div class="feedback-user-star">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_w.png" alt="star-white">
-                    </div>
-                    @else
-                    <div class="feedback-user-star">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                        <img src="./images/star_y.png" alt="star-yellow">
-                    </div>
-                    @endif
                 </div>
             </div>
         </div>
         @endforeach
     </div>
 </div>
-<!-- End feedback -->
 
-<!-- Begin start learn -->
 <div class="start-learn">
     <div class="start-learn-content">
         <p class="start-learn-title">Become a member of our
@@ -180,25 +135,22 @@
         <button class="start-learn-btn btn">Start Learning Now!</button>
     </div>
 </div>
-<!-- End start learn -->
 
-<!-- Begin statistic hapolearn -->
 <div class="statistic other-courses">
     <div class="other-courses-title">Statistic</div>
     <div class="statistic-counter">
         <div class="statistic-counter-item">
             <p class="statistic-counter-title">Courses</p>
-            <p class="statistic-counter-number">{{ $countCourses }}</p>
+            <p class="statistic-counter-number">{{ $coursesCount }}</p>
         </div>
         <div class="statistic-counter-item">
             <p class="statistic-counter-title">Lessons</p>
-            <p class="statistic-counter-number">{{ $countLessons }}</p>
+            <p class="statistic-counter-number">{{ $lessonsCount }}</p>
         </div>
         <div class="statistic-counter-item">
             <p class="statistic-counter-title">Learners</p>
-            <p class="statistic-counter-number">{{ $countLearners }}</p>
+            <p class="statistic-counter-number">{{ $learnersCount }}</p>
         </div>
     </div>
 </div>
-<!-- End statistic hapolearn -->
 @endsection

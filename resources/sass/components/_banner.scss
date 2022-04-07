@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
 }
+
 .banner-content {
   position: absolute;
   top: 14vw;
@@ -48,6 +49,7 @@
   .banner-bg {
     height: 655px;
   }
+
   .banner-content {
     .banner-content-title,
     .banner-content-subtitle {
@@ -69,6 +71,7 @@
   .banner-bg {
     height: 500px;
   }
+
   .banner-content {
     left: 55px;
 
@@ -93,6 +96,7 @@
   .banner-bg {
     height: 350px;
   }
+
   .banner-content {
     left: 20px;
 
@@ -131,6 +135,7 @@
     background-size: 120%, 100%;
     position: relative;
   }
+
   .banner-content {
     top: 250px;
     position: unset;
@@ -170,6 +175,7 @@
     height: 200px;
     background-size: 120%, 100%;
   }
+
   .banner-content {
     top: 205px;
     margin-left: 5vw;
