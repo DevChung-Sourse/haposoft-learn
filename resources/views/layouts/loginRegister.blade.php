@@ -22,7 +22,7 @@
                             <label class="form-check-label" for="exampleCheck1">Remember me</label>
                             <p class="text">Forgot password</p>
                         </div>
-                        <button type="submit" class="btn btn-login">Login</button>
+                        <a type="submit" href="" class="btn btn-login">Login</a>
                     </form>
                     <div class="login-with">
                         <p class="login-with-text">Login with</p>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="form-current" id="register">
-                    <form action="">
+                    <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">User name:</label>
                             <input type="text" class="form-control" id="exampleInputEmail1"
