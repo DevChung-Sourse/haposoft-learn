@@ -21,7 +21,7 @@
             <img src="{{ $course->thumbnail }}" class="card-box-img" alt="Ảnh html css js">
         </div>
         <div class="card-content">
-            <p class="card-content-title">{{ $course->learners }}</p>
+            <p class="card-content-title">{{ $course->title }}</p>
             <p class="card-content-decs">{{ $course->description }}</p>
             <a href="" class="card-btn btn">Take This Course</a>
         </div>

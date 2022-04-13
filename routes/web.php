@@ -18,5 +18,5 @@ use App\Http\Controllers\ListCoursesController;
 |
 */
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Auth::routes();
