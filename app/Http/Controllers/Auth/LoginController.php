@@ -31,7 +31,7 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function login(LoginRequest $request)
+    public function login (LoginRequest $request)
     {
         $data = [
             'email' => $request->email,
@@ -41,7 +41,7 @@ class LoginController extends Controller
         if (Auth::attempt($data, isset($request->rememberme) ? true : false)) {
             return redirect()->route('home');
         } else {
-            return redirect()->back()->with('error','Email or password is invalid!');
+            return redirect()->back()->with('error', 'Email or password is invalid!');
         }
     }
 

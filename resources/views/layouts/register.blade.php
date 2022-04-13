@@ -3,9 +3,9 @@
         @csrf
         <div class="form-group">
             <label for="exampleInputEmail1">User name:</label>
-            <input type="text" name="register_name" class="form-control @error('register_name') is-invalid @enderror"
-                id="exampleInputEmail1" aria-describedby="emailHelp" value="@error('register_name') {{ old('register_name') }} @enderror">
-            @error('register_name')
+            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                id="exampleInputEmail1" aria-describedby="emailHelp" value="@error('name') {{ old('name') }} @enderror">
+            @error('name')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
@@ -23,10 +23,10 @@
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" name="register_password"
-                class="form-control @error('register_password') is-invalid @enderror" id="password"
+            <input type="password" name="password"
+                class="form-control @error('password') is-invalid @enderror" id="password"
                 aria-describedby="emailHelp">
-            @error('register_password')
+            @error('password')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>

@@ -24,27 +24,27 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'register_name' => 'required|max:255|unique:users,name',
+            'name' => 'required|max:255|unique:users,name',
             'email' => 'required|email|max:255|unique:users,email',
-            'register_password' => 'required|min:6|string',
-            'confirm_password' => 'required|same:register_password',
+            'password' => 'required|min:6|string',
+            'confirm_password' => 'required|same:password',
         ];
     }
 
     public function messages()
     {
         return [
-            'register_name.required'  => 'Please enter the name!',
-            'register_name.max' => 'Name should not exceed 30 characters',
-            'register_name.unique' => 'Name already exists',
+            'name.required'  => 'Please enter the name!',
+            'name.max' => 'Name should not exceed 30 characters',
+            'name.unique' => 'Name already exists',
             'email.required'  => 'Please enter the email!',
             'email.max' => 'Email should not exceed 255 characters',
             'email.unique' => 'Email already exists',
             'email.email' => 'Please enter correct email format',
-            'register_password.min'  => 'Password must be at least 6 characters!',
-            'register_password.required'  => 'Please enter the password!',
+            'password.min'  => 'Password must be at least 6 characters!',
+            'password.required'  => 'Please enter the password!',
             'confirm_password.same'  => 'Confirm password does not match password!',
-            'register_password.string'  => 'The password must not contain any spaces',
+            'password.string'  => 'The password must not contain any spaces',
             'confirm_password.required'  => 'Please enter the confirmPassword!',
         ];
     }
