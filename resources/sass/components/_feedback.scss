@@ -17,14 +17,13 @@
 
 .feedback-carousel {
   width: 100%;
-  height: auto;
   display: flex;
   justify-content: space-between;
 
   .feedback-content {
     display: flex;
     flex-direction: column;
-    margin-right: 30px;
+    width: 95% !important;
 
     .feedback-box {
       width: 100%;
@@ -42,6 +41,10 @@
       border-left: 5px solid #d9dadc;
       padding: 20px 0 20px 30px;
       margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   }
 }
@@ -55,6 +58,11 @@
     width: 60px;
     height: 60px;
     padding-top: 10px;
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+    }
   }
 
   .feedback-user-info {
@@ -150,8 +158,6 @@
 
 @media screen and (max-width: 678px) {
   .feedback {
-    height: 100vh;
-
     .feedback-desc {
       .feedback-text {
         font-size: 16px;

@@ -18,7 +18,6 @@
 
 .nav-menu {
   margin-right: 5rem;
-  background-color: #fff;
   @include flexLayout(space-between);
 
   .nav-menu-item {
