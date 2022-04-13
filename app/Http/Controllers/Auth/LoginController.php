@@ -31,7 +31,7 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function login (LoginRequest $request)
+    public function login(LoginRequest $request)
     {
         $data = [
             'email' => $request->email,
@@ -45,7 +45,7 @@ class LoginController extends Controller
         }
     }
 
-    public function logout (Request $request)
+    public function logout(Request $request)
     {
         Auth::logout();
         $request->session()->regenerateToken();

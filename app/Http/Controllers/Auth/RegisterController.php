@@ -33,7 +33,7 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function register (RegisterRequest $request)
+    public function register(RegisterRequest $request)
     {
         $data = [
             'name' => $request->name,
