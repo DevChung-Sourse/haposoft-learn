@@ -6,6 +6,7 @@
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import "~select2/dist/css/select2.css";
 @import './varialables/variableGlobal';
 @import './components/header';
 @import './components/banner';
@@ -17,3 +18,4 @@
 @import './components/statistic';
 @import './components/footer';
 @import './components/loginRegister';
+@import './components/coursespage';

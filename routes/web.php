@@ -17,3 +17,4 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Auth::routes();
+Route::get('/list-courses', [ListCoursesController::class, 'show'])->name('list-courses');
