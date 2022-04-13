@@ -121,3 +121,42 @@
     }
   }
 }
+
+.custom-dropdown {
+  font-size: 17px;
+  text-transform: uppercase;
+  margin-left: 16px;
+  border: none;
+  background-color: $background-style;
+  color: #fff;
+}
+
+.btn-logout {
+  border: none;
+  background: #fff;
+  width: 100%;
+  font-size: 18px;
+
+  i {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background-color: $background-style;
+    color: #fff;
+  }
+}
+
+.custom-profile {
+  font-size: 18px;
+  text-align: center;
+
+  i {
+    margin-right: 16px;
+  }
+
+  &:hover {
+    background-color: $background-style;
+    color: #fff;
+  }
+}

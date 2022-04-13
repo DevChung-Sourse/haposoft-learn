@@ -41,7 +41,7 @@ class LoginController extends Controller
         if (Auth::attempt($data, isset($request->rememberme) ? true : false)) {
             return redirect()->route('home');
         } else {
-            return redirect()->back()->with('error','email or password is invalid!');
+            return redirect()->back()->with('error','Email or password is invalid!');
         }
     }
 

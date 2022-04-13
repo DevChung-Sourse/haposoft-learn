@@ -8,8 +8,8 @@
         @endif
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="text" name="email" class="form-control"
-                id="email @error('email') is-invalid login @enderror" aria-describedby="emailHelp">
+            <input type="email" name="email" class="form-control @error('email') is-invalid login @enderror"
+                id="email" aria-describedby="emailHelp" value="@error('email') {{ old('email') }} @enderror">
             @error ('email')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
