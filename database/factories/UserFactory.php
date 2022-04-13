@@ -34,6 +34,7 @@ class UserFactory extends Factory
             'phone' => $this->faker->tollFreePhoneNumber(),
             'role' => $this->faker->numberBetween(0, 1),
             'job' => $this->faker->jobTitle(),
+            'avatar' => $this->faker->imageUrl(100, 100)
         ];
     }
 

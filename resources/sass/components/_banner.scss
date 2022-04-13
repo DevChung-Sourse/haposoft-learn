@@ -1,0 +1,208 @@
+.banner {
+  position: relative;
+}
+
+.banner-bg {
+  background: url("https://res.cloudinary.com/derrfxjxx/image/upload/v1646801607/hapo_learn_banner_1_ya6dcc.png");
+  background-size: 100% 100%;
+  background-position: top right;
+  background-repeat: no-repeat;
+  height: 885px;
+  display: flex;
+  align-items: center;
+}
+
+.banner-content {
+  position: absolute;
+  top: 14vw;
+  left: 5vw;
+
+  .banner-content-title {
+    font-family: $font-poppins;
+    color: $color-title;
+    margin-bottom: 0;
+    font-size: 50px;
+    font-weight: 400;
+  }
+
+  .banner-content-subtitle {
+    font-family: $font-poppins;
+    color: $color-title;
+    font-size: 50px;
+    font-weight: 800;
+    margin-top: 0;
+  }
+
+  .banner-content-desc {
+    font-size: 20px;
+    font-weight: 400;
+    color: $color-default;
+  }
+
+  .banner-content-btn {
+    width: 400px;
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 1441px) {
+  .banner-bg {
+    height: 655px;
+  }
+
+  .banner-content {
+    .banner-content-title,
+    .banner-content-subtitle {
+      font-size: 40px;
+    }
+
+    .banner-content-desc {
+      font-size: 18px;
+    }
+
+    .banner-content-btn {
+      width: 370px;
+      font-size: 28px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .banner-bg {
+    height: 500px;
+  }
+
+  .banner-content {
+    left: 55px;
+
+    .banner-content-title,
+    .banner-content-subtitle {
+      font-size: 30px;
+    }
+
+    .banner-content-desc {
+      font-size: 16px;
+    }
+
+    .banner-content-btn {
+      width: 300px;
+      height: 60px;
+      font-size: 24px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner-bg {
+    height: 350px;
+  }
+
+  .banner-content {
+    left: 20px;
+
+    .banner-content-title {
+      font-size: 28px;
+      letter-spacing: -5%;
+      margin-top: 0;
+    }
+
+    .banner-content-subtitle {
+      font-size: 28px;
+      letter-spacing: -5%;
+      margin-bottom: 0;
+
+      img {
+        width: 30px;
+      }
+    }
+
+    .banner-content-desc {
+      font-size: 14px;
+      letter-spacing: -5%;
+    }
+
+    .banner-content-btn {
+      width: 200px;
+      height: 37px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .banner-bg {
+    max-height: 250px;
+    background-size: 120%, 100%;
+    position: relative;
+  }
+
+  .banner-content {
+    top: 250px;
+    position: unset;
+    margin-left: 5vw;
+
+    .banner-content-title {
+      font-size: 26px;
+      letter-spacing: -5%;
+      margin-top: 0;
+    }
+
+    .banner-content-subtitle {
+      font-size: 26px;
+      letter-spacing: -5%;
+      margin-bottom: 0;
+    }
+
+    .banner-content-desc {
+      font-size: 14px;
+      letter-spacing: -5%;
+    }
+
+    .banner-content-btn {
+      width: 200px;
+      height: 37px;
+      font-size: 16px;
+    }
+  }
+
+  .banner-icon-owl {
+    width: 26px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .banner-bg {
+    height: 200px;
+    background-size: 120%, 100%;
+  }
+
+  .banner-content {
+    top: 205px;
+    margin-left: 5vw;
+
+    .banner-content-title {
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    .banner-content-subtitle {
+      font-size: 20px;
+      margin-bottom: 0;
+    }
+
+    .banner-content-desc {
+      font-size: 14px;
+      letter-spacing: -5%;
+    }
+
+    .banner-content-btn {
+      width: 200px;
+      height: 37px;
+      font-size: 16px;
+    }
+  }
+
+  .banner-icon-owl {
+    width: 20px;
+  }
+}
