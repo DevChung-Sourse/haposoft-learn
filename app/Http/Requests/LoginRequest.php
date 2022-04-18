@@ -22,8 +22,8 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required' => 'Trường này không được bỏ trống',
-            'password.required' => 'Trường này không được bỏ trống',
+            'email.required' => 'This field cannot be empty!',
+            'password.required' => 'This field cannot be empty!',
             'password.min'  => 'Password must be at least 6 characters!',
         ];
     }

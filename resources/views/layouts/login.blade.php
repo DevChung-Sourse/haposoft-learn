@@ -8,8 +8,8 @@
         @endif
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" name="email" class="form-control @error('email') is-invalid login @enderror"
-                id="email" aria-describedby="emailHelp" value="@error('email') {{ old('email') }} @enderror">
+            <input type="email" name="email" class="form-control @error('email') is-invalid login @enderror" id="email"
+                aria-describedby="emailHelp" value="@error('email') {{ old('email') }} @enderror">
             @error ('email')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -20,6 +20,11 @@
             <label for="password">Password:</label>
             <input type="password" name="password" class="form-control @error('password') is-invalid login @enderror"
                 id="password">
+            @error ('password')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
         <div class="form-check check">
             <input type="checkbox" class="form-check-input" name="rememberme" id="checkbox" value="true">
