@@ -33,15 +33,17 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function register(RegisterRequest $request)
+    public function register(Request $request)
     {
-        $data = [
-            'name' => $request->name,
-            'email' => $request->register_email,
-            'password' => bcrypt($request->register_password),
+        $data =  $request->all();
+
+        $data1 = [
+            'name' => $data['name'],
+            'email' => $data['register_email'],
+            'password' => bcrypt($data['register_password']),
         ];
 
-        User::create($data);
+        User::create($data1);
 
         return redirect()->back()->with('message', 'Register successfully!');
     }
