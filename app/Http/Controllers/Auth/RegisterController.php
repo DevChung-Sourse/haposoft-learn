@@ -37,8 +37,8 @@ class RegisterController extends Controller
     {
         $data = [
             'name' => $request->name,
-            'email' => $request->registerEmail,
-            'password' => bcrypt($request->registerPassword),
+            'email' => $request->register_email,
+            'password' => bcrypt($request->register_password),
         ];
 
         User::create($data);

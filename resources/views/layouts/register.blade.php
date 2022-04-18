@@ -13,20 +13,20 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Email:</label>
-            <input type="email" name="registerEmail" class="form-control @error('registerEmail') is-invalid @enderror"
-                id="exampleInputPassword1" value="@error('registerEmail') {{ old('email') }} @enderror">
-            @error('registerEmail')
+            <input type="email" name="register_email" class="form-control @error('register_email') is-invalid @enderror"
+                id="exampleInputPassword1" value="@error('register_email') {{ old('email') }} @enderror">
+            @error('register_email')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
         </div>
         <div class="form-group">
-            <label for="registerPassword">Password:</label>
-            <input type="password" name="registerPassword"
-                class="form-control @error('registerPassword') is-invalid @enderror" id="registerPassword"
+            <label for="register_password">Password:</label>
+            <input type="password" name="register_password"
+                class="form-control @error('register_password') is-invalid @enderror" id="register_password"
                 aria-describedby="emailHelp">
-            @error('registerPassword')
+            @error('register_password')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>

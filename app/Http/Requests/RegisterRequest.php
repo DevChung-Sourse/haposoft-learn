@@ -25,9 +25,9 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255|unique:users,name',
-            'registerEmail' => 'required|email|max:255|unique:users,email',
-            'registerPassword' => 'required|min:6|string',
-            'confirm_password' => 'required|same:registerPassword',
+            'register_email' => 'required|email|max:255|unique:users,email',
+            'register_password' => 'required|min:6|string',
+            'confirm_password' => 'required|same:register_password',
         ];
     }
 
@@ -37,14 +37,14 @@ class RegisterRequest extends FormRequest
             'name.required'  => 'Please enter the name!',
             'name.max' => 'Name should not exceed 30 characters',
             'name.unique' => 'Name already exists',
-            'registerEmail.required'  => 'Please enter the email!',
-            'registerEmail.max' => 'Email should not exceed 255 characters',
-            'registerEmail.unique' => 'Email already exists',
-            'registerEmail.email' => 'Please enter correct email format',
-            'registerPassword.min'  => 'Password must be at least 6 characters!',
-            'registerPassword.required'  => 'Please enter the password!',
+            'register_email.required'  => 'Please enter the email!',
+            'register_email.max' => 'Email should not exceed 255 characters',
+            'register_email.unique' => 'Email already exists',
+            'register_email.email' => 'Please enter correct email format',
+            'register_password.min'  => 'Password must be at least 6 characters!',
+            'register_password.required'  => 'Please enter the password!',
             'confirm_password.same'  => 'Confirm password does not match password!',
-            'registerPassword.string'  => 'The password must not contain any spaces',
+            'register_password.string'  => 'The password must not contain any spaces',
             'confirm_password.required'  => 'Please enter the confirmPassword!',
         ];
     }
