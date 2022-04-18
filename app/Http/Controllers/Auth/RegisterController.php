@@ -35,15 +35,13 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        $data =  $request->all();
-
-        $data1 = [
-            'name' => $data['name'],
-            'email' => $data['register_email'],
-            'password' => bcrypt($data['register_password']),
+        $data = [
+            'name' => $request['name'],
+            'email' => $request['register_email'],
+            'password' => bcrypt($request['register_password']),
         ];
 
-        User::create($data1);
+        User::create($data);
 
         return redirect()->back()->with('message', 'Register successfully!');
     }
