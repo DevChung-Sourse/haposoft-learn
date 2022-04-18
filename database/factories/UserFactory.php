@@ -27,12 +27,12 @@ class UserFactory extends Factory
             'full_name' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => $this->faker->password(),
+            'password' => bcrypt($this->faker->password()),
             'remember_token' => Str::random(10),
             'birthday' => $this->faker->date(),
             'address' => $this->faker->country(),
             'phone' => $this->faker->tollFreePhoneNumber(),
-            'role' => $this->faker->numberBetween(0, 1),
+            'role' => $this->faker->numberBetween(0,1),
             'job' => $this->faker->jobTitle(),
             'avatar' => $this->faker->imageUrl(100, 100)
         ];

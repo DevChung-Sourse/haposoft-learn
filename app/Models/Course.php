@@ -52,4 +52,65 @@ class Course extends Model
     {
         return $this->hasMany(Review::class, 'course_id');
     }
+
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class, 'course_id', 'id');
+    }
+
+    public function getLearnersAttribute()
+    {
+        return number_format($this->users()->count());
+    }
+
+    public function getLessonsCountAttribute()
+    {
+        return number_format($this->lessons()->count());
+    }
+
+    public function getTimeSumAttribute()
+    {
+        return number_format($this->lessons()->sum('time')) . " " . "(h)";
+    }
+
+    public function scopeSearch($query, $data)
+    {
+        if (isset($data['search'])) {
+            $query->where('title', 'LIKE', '%' . $data['search'] . '%')
+                  ->orWhere('description', 'LIKE', '%' . $data['search'] . '%');
+        }
+
+        if (isset($data['created_time'])) {
+            $query->orderBy('created_at', $data['created_time']);
+        } else {
+            $query->orderBy('id', config('filter.sort.desc'));
+        }
+
+        if (isset($data['teacher'])) {
+            $query->whereHas('teachers', function ($subquery) use ($data) {
+                $subquery->where('user_id', $data['teacher']);
+            });
+        }
+
+        if (isset($data['learner'])) {
+            $query->withCount('users')->orderBy('users_count', $data['learner']);
+        }
+
+        if (isset($data['learn_time'])) {
+            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $data['learn_time']);
+        }
+
+        if (isset($data['lesson'])) {
+            $query->withCount('lessons')->orderBy('lessons_count', $data['lesson']);
+        }
+
+        if (isset($data['tag'])) {
+            $tag = $data['tag'];
+            $query->whereHas('tags', function ($subquery) use ($tag) {
+                $subquery->where('tag_id', $tag);
+            });
+        }
+
+        return $query;
+    }
 }
