@@ -1,0 +1,308 @@
+.container-courses {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-search {
+  width: 90%;
+
+  .filter-search {
+    width: 100%;
+  }
+}
+
+.hapo-listcourse-body {
+  background: $hapo-listcourse-body;
+  width: 100%;
+
+  .hapo-listcourse-header {
+    padding-top: 30px;
+    width: 90%;
+
+    .list-course-filter {
+      text-align: center;
+      box-sizing: border-box;
+      background: $color-btn;
+      border: 1px solid $list-course-filter-border;
+      border-radius: 5px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    .list-course-filter-content {
+      color: $color-default;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 22px;
+      padding: 7px 0;
+    }
+
+    .list-course-search {
+      position: relative;
+    }
+
+    .input-search {
+      width: 100%;
+      height: 40px;
+      background: $color-btn;
+      border: 1px solid $list-course-filter-border;
+      border-radius: 5px;
+      padding: 12px;
+    }
+
+    .search {
+      position: absolute;
+      right: 10px;
+      top: 12px;
+      color: $color-default;
+    }
+
+    .list-course-btn-search {
+      height: 40px;
+      background: $background-style;
+      border: 1px solid $background-style;
+      border-radius: 5px;
+      color: $color-btn;
+      padding: 6px 24px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+  }
+
+  .hapo-listcourse-selective {
+    margin-top: 30px;
+    height: 100%;
+    background: $color-btn;
+    border: 1px solid $list-course-filter-border;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: none;
+
+    .hapo-listcourse-select-main {
+      padding: 15px 0;
+    }
+
+    .hapo-listcourse-select-main-second {
+      padding-bottom: 16px;
+    }
+
+    .filter-by {
+      color: $color-default;
+      line-height: 22px;
+      font-weight: 700;
+      padding-left: 5px;
+    }
+
+    .list-course-filter-new {
+      width: 80px;
+      background: $background-style;
+      border-radius: 2px;
+      text-align: center;
+      padding: 5px;
+    }
+
+    .filter-new {
+      text-decoration: none;
+      color: $color-btn;
+      line-height: 19px;
+      font-weight: 600;
+    }
+
+    .list-course-filter-old {
+      width: 80px;
+      background: $list-course-filter-old;
+      text-align: center;
+      padding: 5px;
+      border-radius: 2px;
+    }
+
+    .filter-old {
+      text-decoration: none;
+      color: $color-default;
+      line-height: 19px;
+      font-weight: 600;
+    }
+
+    .form-select {
+      width: 100%;
+      padding: 5px;
+    }
+  }
+
+  .hapo-list-course-main {
+    margin-top: 35px;
+    padding-bottom: 90px;
+    width: 90%;
+
+    .list-course-card {
+      background: $color-btn;
+      border: 1px solid $color-btn;
+      box-sizing: border-box;
+      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+      border-radius: 8px;
+      margin-bottom: 40px;
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .list-card {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .hapo-list-course-head {
+      display: flex;
+      width: 90%;
+    }
+
+    .list-course-content {
+      padding-left: 20px;
+    }
+
+    .list-course-btn {
+      display: flex;
+      justify-content: end;
+      width: 90%;
+    }
+
+    .hapo-list-course-statistic {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      padding: 15px 0px;
+      width: 90%;
+    }
+
+    .list-course-logo {
+      padding-top: 12px;
+      width: 100px;
+      height: 100px;
+    }
+
+    .list-course-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .list-course-content-title {
+      color: $color-default;
+      font-size: 22px;
+      line-height: 31px;
+      letter-spacing: -0.05em;
+      font-weight: 700;
+      padding: 10px 0;
+    }
+
+    .list-course-content-txt {
+      color: $color-default;
+      line-height: 25px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .list-course-btn-more {
+      background: $background-style;
+      border-radius: 22px;
+      border: none;
+      padding: 8px 27px;
+      color: $color-btn;
+      text-align: center;
+    }
+
+    .list-course-specical-title {
+      color: $color-default;
+      font-size: 22px;
+      letter-spacing: -0.05em;
+      line-height: 31px;
+      font-weight: 700;
+    }
+
+    .list-course-specical-num {
+      color: $background-style;
+      line-height: 37px;
+      font-size: 27px;
+      letter-spacing: -0.05em;
+      font-weight: 700;
+    }
+  }
+
+  .list-course-pagination {
+    display: flex;
+    justify-content: end;
+
+    .page-item {
+      padding: 0 2px;
+    }
+
+    .page-link {
+      color: #b2d235;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .page-link:hover {
+      background: #b2d235;
+      color: #ffffff;
+    }
+  }
+}
+
+.pagination {
+  float: right;
+}
+
+.filter-date {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.filter-date li {
+  float: left;
+  margin: 0 5px 0 0;
+  width: 100px;
+  height: 40px;
+  position: relative;
+}
+
+.filter-date label,
+.filter-date input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.filter-date input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+}
+
+.filter-date input[type="radio"]:checked + label,
+.Checked + label {
+  background: #b2d235;
+}
+
+.filter-date label {
+  padding: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  z-index: 90;
+}
+
+.filter-date label:hover {
+  background: #ddd;
+}

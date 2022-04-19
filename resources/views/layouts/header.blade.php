@@ -4,7 +4,7 @@
     </div>
     <ul class="nav-menu" id="menu">
         <li class="nav-menu-item"><a href="#" class="nav-menu-item-link">Home</a></li>
-        <li class="nav-menu-item active"><a href="#" class="nav-menu-item-link">All courses</a></li>
+        <li class="nav-menu-item active"><a href="{{ route('courses.index') }}" class="nav-menu-item-link">All courses</a></li>
         @if (Auth::check())
         <div class="dropdown show border-0">
             <a class="btn btn-secondary dropdown-toggle custom-dropdown" href="#" role="button" id="dropdownMenuLink"
