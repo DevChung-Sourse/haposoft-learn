@@ -33,25 +33,24 @@
                     <div class="col-md-1">
                         <div class="filter-by">Lọc theo</div>
                     </div>
-                    <ul class="donate-now">
-                        <li class="col-md-1">
-                            <div class="list-course-filter-new">
-                                <input type="radio" id="latest" name="created_time" value="{{ config('filter.sort.desc') }}" @if ($request->created_time == config('filter.sort.desc') || is_null($request->created_time)) checked @endif/>
-                                <label for="latest">Mới nhất</label>
-                            </div>
+                    <ul class="filter-date col-md-2">
+                        <li class="col-md-6">
+                            <input type="radio" id="latest" name="created_time" value="{{ config('filter.sort.desc') }}"
+                                @if ($request->created_time == config('filter.sort.desc') ||
+                            is_null($request->created_time)) checked @endif/>
+                            <label for="latest">Mới nhất</label>
                         </li>
-                        <li class="col-md-1">
-                            <div class="list-course-filter-new">
-                                <input type="radio" id="oldest" name="created_time" value="{{ config('filter.sort.asc') }}" @if ($request->created_time == config('filter.sort.asc')) checked @endif/>
-                                <label for="oldest">Cũ nhất</label>
-                            </div>
+                        <li class="col-md-6">
+                            <input type="radio" id="oldest" name="created_time" value="{{ config('filter.sort.asc') }}"
+                                @if ($request->created_time == config('filter.sort.asc')) checked @endif/>
+                            <label for="oldest">Cũ nhất</label>
                         </li>
                     </ul>
                     <div class="col-md-2">
                         <select class="form-select" aria-label="Default select example" name="teacher">
-                            <option value="{{ $request->teacher }}" selected>Teacher</option>
+                            <option value="" selected>Teacher</option>
                             @foreach ($teachers as $teacher)
-                            <option value="{{ $teacher->id }}" @if($request->teacher) selected @endif>
+                            <option value="{{ $teacher->id }}" @if($request['teacher']==$teacher->id) selected @endif>
                                 {{ $teacher->name }}
                             </option>
                             @endforeach
@@ -89,9 +88,11 @@
                     <div class="col-1"></div>
                     <div class="col-md-2">
                         <select class="form-select" aria-label="Default select example" name="tag">
-                            <option value="{{ $request->tag }}" selected>Tags</option>
+                            <option value="" selected>Tags</option>
                             @foreach ($tags as $tag)
-                            <option value="{{ $tag->id }}" @if($request->tag) selected @endif>{{ $tag->title }}</option>
+                            <option value="{{ $tag->id }}" @if($request['tag']==$tag->id) selected @endif>
+                                {{ $tag->title }}
+                            </option>
                             @endforeach
                         </select>
                     </div>
@@ -101,34 +102,7 @@
         <div class="hapo-list-course-main">
             <div class="list-card">
                 @foreach ($courses as $course)
-                <div class="list-course-card">
-                    <div class="hapo-list-course-head">
-                        <div class="list-course-logo">
-                            <img src="{{ $course->thumbnail }}" alt="list-course-html" class="list-course-img">
-                        </div>
-                        <div class="list-course-content">
-                            <div class="list-course-content-title">{{ $course->title }}</div>
-                            <p class="list-course-content-txt">{{ $course->description }}</p>
-                        </div>
-                    </div>
-                    <div class="list-course-btn">
-                        <button class="list-course-btn-more">More</button>
-                    </div>
-                    <div class="hapo-list-course-statistic">
-                        <div class="hapo-list-course-statistic-left">
-                            <div class="list-course-specical-title">Learners</div>
-                            <div class="list-course-specical-num">{{ $course->learners }}</div>
-                        </div>
-                        <div class="hapo-list-course-statistic-mid">
-                            <div class="list-course-specical-title">Lessons</div>
-                            <div class="list-course-specical-num">{{ $course->lessons_count }}</div>
-                        </div>
-                        <div class="hapo-list-course-statistic-right">
-                            <div class="list-course-specical-title">Times</div>
-                            <div class="list-course-specical-num">{{ $course->time_sum }}</div>
-                        </div>
-                    </div>
-                </div>
+                @include('courses.course')
                 @endforeach
             </div>
             {!! $courses->links() !!}
