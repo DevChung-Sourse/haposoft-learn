@@ -17,5 +17,5 @@ use App\Http\Controllers\ListCoursesController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::resource('list-courses', ListCoursesController::class)->only('index');
+Route::resource('courses', ListCoursesController::class)->only('index');
 Auth::routes();

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.index')
 @section('content')
 <div class="banner">
     <div class="banner-bg"></div>

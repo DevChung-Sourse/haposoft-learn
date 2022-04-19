@@ -75,13 +75,13 @@ class Course extends Model
 
     public function scopeSearch($query, $data)
     {
-        if (isset($data['search'])) {
-            $query->where('title', 'LIKE', '%' . $data['search'] . '%')
-                  ->orWhere('description', 'LIKE', '%' . $data['search'] . '%');
+        if (isset($data['keywords'])) {
+            $query->where('title', 'LIKE', '%' . $data['keywords'] . '%')
+                  ->orWhere('description', 'LIKE', '%' . $data['keywords'] . '%');
         }
 
         if (isset($data['created_time'])) {
-            $query->orderBy('id', $data['created_time']);
+            $query->orderBy('created_at', $data['created_time']);
         } else {
             $query->orderBy('id', config('filter.sort.desc'));
         }
@@ -105,12 +105,10 @@ class Course extends Model
         }
 
         if (isset($data['tag'])) {
-            $tag = $data['tag'];
-            $query->whereHas('tags', function ($subquery) use ($tag) {
-                $subquery->where('tag_id', $tag);
+            $query->whereHas('tags', function ($subquery) use ($data) {
+                $subquery->where('tag_id', $data['tag']);
             });
         }
-
         return $query;
     }
 }

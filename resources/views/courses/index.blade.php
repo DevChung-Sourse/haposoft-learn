@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.index')
 @section('content')
 <div class="hapo-listcourse-body">
     <div class="container-courses">
-        <form action="{{ route('list-courses.index') }}" method="GET" class="form-search">
-            @csrf
+        <form action="{{ route('courses.index') }}" method="GET" class="form-search">
             <div class="hapo-listcourse-header">
                 <div class="row">
                     <div class="col-md-6">
@@ -17,7 +16,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="list-course-search">
-                                    <input type="text" name="search" placeholder="Search..." class="input-search">
+                                    <input type="text" name="keywords" placeholder="Search..." class="input-search">
                                     <i class="fa-solid fa-magnifying-glass search"></i>
                                 </div>
                             </div>
@@ -50,7 +49,7 @@
                         <select class="form-select" aria-label="Default select example" name="teacher">
                             <option value="" selected>Teacher</option>
                             @foreach ($teachers as $teacher)
-                            <option value="{{ $teacher->id }}" @if($request['teacher']==$teacher->id) selected @endif>
+                            <option value="{{ $teacher->id }}" @if($request['teacher'] == $teacher->id) selected @endif>
                                 {{ $teacher->name }}
                             </option>
                             @endforeach
