@@ -98,7 +98,7 @@
                     <tr>
                         <td class="table-title"><i class="icon-course-info fa-solid fa-key"></i>Tags</td>
                         <td class="info-number">
-                            @foreach ($course->tags()->get()->random(2) as $tag)
+                            @foreach ($course->tags()->get() as $tag)
                             <a href="{{ $tag->link }}" class="course-tags">#{{ $tag->title }}</a>
                             @endforeach
                         </td>

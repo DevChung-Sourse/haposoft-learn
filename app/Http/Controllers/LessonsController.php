@@ -14,7 +14,7 @@ class LessonsController extends Controller
     {
         $course = Course::find($courseId);
         $lesson = Lesson::find($lessonId);
-        $otherCourses = Course::get()->random(5);
+        $otherCourses = Course::randomCourses();
         $documents = $lesson->documents()->get();
         return view('lessons.show', compact(['course', 'lesson', 'otherCourses', 'documents']));
     }

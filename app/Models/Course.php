@@ -121,4 +121,9 @@ class Course extends Model
         }
         return $query;
     }
+
+    public function scopeRandomCourses($query)
+    {
+        return $query->get()->random(config('filter.random_item_other_courses'));
+    }
 }

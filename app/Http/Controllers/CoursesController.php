@@ -23,7 +23,7 @@ class CoursesController extends Controller
     {
         $course = Course::find($id);
         $lessons = Lesson::lessonsOfCourse($request->all(), $id)->paginate(config('filter.item_page_lessons'));
-        $otherCourses = Course::get()->random(5);
+        $otherCourses = Course::randomCourses();
         $teachers = $course->teachers()->get();
         return view('courses.show', compact(['course', 'lessons', 'otherCourses', 'teachers', 'request']));
     }
