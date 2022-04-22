@@ -21,7 +21,7 @@ class LessonFactory extends Factory
             'description' => $this->faker->text(),
             'requirements' => $this->faker->text(),
             'time' => $this->faker->numberBetween(10, 30),
-            'course_id' => $this->faker->numberBetween(1, 200),
+            'course_id' => $this->faker->numberBetween(1, 50),
         ];
     }
 }

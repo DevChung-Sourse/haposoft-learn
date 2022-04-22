@@ -73,6 +73,11 @@ class Course extends Model
         return number_format($this->lessons()->sum('time')) . " " . "(h)";
     }
 
+    public function getTimeSumHoursAttribute()
+    {
+        return number_format($this->lessons()->sum('time')) . " " . "hours";
+    }
+
     public function scopeSearch($query, $data)
     {
         if (isset($data['keywords'])) {
@@ -83,7 +88,7 @@ class Course extends Model
         if (isset($data['created_time'])) {
             $query->orderBy('created_at', $data['created_time']);
         } else {
-            $query->orderBy('id', config('filter.sort.desc'));
+            $query->orderBy('created_at', config('filter.sort.desc'));
         }
 
         if (isset($data['teacher'])) {

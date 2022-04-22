@@ -1,6 +1,6 @@
 <div class="nav">
     <div class="nav-box">
-        <img src="./images/logo_hapolearn.png" alt="Logo haposoft learn" class="nav-box-img">
+        <img src="{{ asset('/images/logo_hapolearn.png') }}" alt="Logo haposoft learn" class="nav-box-img">
     </div>
     <ul class="nav-menu" id="menu">
         <li class="nav-menu-item"><a href="#" class="nav-menu-item-link">Home</a></li>

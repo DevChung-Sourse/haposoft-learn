@@ -20,7 +20,7 @@ class ReviewFactory extends Factory
             'vote' => $this->faker->numberBetween(1, 5),
             'comments' => $this->faker->text(),
             'user_id' => $this->faker->numberBetween(1, 100),
-            'course_id' => $this->faker->numberBetween(1, 100),
+            'course_id' => $this->faker->numberBetween(1, 50),
         ];
     }
 }

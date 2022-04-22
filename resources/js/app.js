@@ -5,3 +5,4 @@ require('./navBar');
 require('./feedback');
 require('./loginRegister');
 require('./filterCourses');
+require('./coursesDetail');
