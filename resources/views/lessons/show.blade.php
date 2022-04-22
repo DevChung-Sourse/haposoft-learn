@@ -85,7 +85,7 @@
                     <tr>
                         <td class="table-title"><i class="icon-course-info fa-solid fa-key"></i>Tags</td>
                         <td class="info-number">
-                            @foreach ($course->tags()->get()->random(2) as $tag)
+                            @foreach ($course->tags()->get() as $tag)
                             <a href="{{ $tag->link }}" class="course-tags">#{{ $tag->title }}</a>
                             @endforeach
                         </td>
@@ -93,15 +93,8 @@
                     <tr>
                         <td class="table-title"><i class="icon-course-info fa-solid fa-money-check-dollar"></i>Price
                         </td>
-                        <td class="info-number">
-                            @if ($course->price === 0)
-                                free
-                            @else
-                                {{ $course->price }} $
-                            @endif
-                        </td>
+                        <td class="info-number">{{ $course->price_dolar }}</td>
                     </tr>
-
                     <tr>
                         <td class="table-title text-center" colspan="2">
                             <a href="" class="button-custom-circle py-2 px-4">Kết thúc khóa học</a>

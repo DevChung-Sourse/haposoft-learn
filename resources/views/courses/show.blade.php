@@ -65,7 +65,6 @@
                                 </div>
                                 <p class="card-info-desc">{{ $teacher->job }}</p>
                             </div>
-
                             @endforeach
                         </div>
                     </div>
@@ -104,11 +103,10 @@
                             @endforeach
                         </td>
                     </tr>
-
                     <tr>
                         <td class="table-title"><i class="icon-course-info fa-solid fa-money-check-dollar"></i>Price
                         </td>
-                        <td class="info-number">{{ $course->price }} $</td>
+                        <td class="info-number">{{ $course->price_dolar }}</td>
                     </tr>
                 </table>
             </div>

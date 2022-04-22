@@ -78,6 +78,11 @@ class Course extends Model
         return number_format($this->lessons()->sum('time')) . " " . "hours";
     }
 
+    public function getPriceDolarAttribute()
+    {
+        return $this->price == 0 ? "Free" : $this->price . " $";
+    }
+
     public function scopeSearch($query, $data)
     {
         if (isset($data['keywords'])) {
