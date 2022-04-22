@@ -19,16 +19,6 @@ class CoursesController extends Controller
         return view('courses.index', compact(['courses', 'teachers', 'tags', 'request']));
     }
 
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
     public function show($id, Request $request)
     {
         $course = Course::find($id);
@@ -36,20 +26,5 @@ class CoursesController extends Controller
         $otherCourses = Course::get()->random(5);
         $teachers = $course->teachers()->get();
         return view('courses.show', compact(['course', 'lessons', 'otherCourses', 'teachers', 'request']));
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }
