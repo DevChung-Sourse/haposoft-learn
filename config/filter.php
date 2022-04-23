@@ -5,5 +5,7 @@ return [
         'desc' => 'desc',
     ],
     'item_page' => 16,
+    'item_page_lessons' => 14,
+    'limited_courses' => 5,
 ];
 ?>

@@ -17,10 +17,10 @@ class DocumentFactory extends Factory
     public function definition()
     {
         return [
-            'file_path' => $this->faker->url(),
-            'title' => $this->faker->text(),
-            'lesson_id' => $this->faker->numberBetween(1, 200),
-            'type' => $this->faker->mimeType(),
+            'file_path' => $this->faker->imageUrl(),
+            'title' => $this->faker->catchPhrase(),
+            'lesson_id' => $this->faker->numberBetween(1, 1000),
+            'type' => $this->faker->lastName(),
         ];
     }
 }
