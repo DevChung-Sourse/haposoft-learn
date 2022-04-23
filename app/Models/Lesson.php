@@ -50,7 +50,7 @@ class Lesson extends Model
 
     public function scopeSearch($query, $data, $id)
     {
-        $query->where('course_id', $id)->orderBy('created_at', config('filter.sort.desc'));
+        $query->where('course_id', $id);
         if (isset($data['keywords_lesson'])) {
             $query->where('description', 'LIKE', '%' . $data['keywords_lesson'] . '%');
         }
