@@ -48,9 +48,8 @@ class Lesson extends Model
         return $this->hasMany(Document::class, 'lesson_id');
     }
 
-    public function scopeSearch($query, $data, $id)
+    public function scopeSearch($query, $data)
     {
-        $query->where('course_id', $id);
         if (isset($data['keywords_lesson'])) {
             $query->where('description', 'LIKE', '%' . $data['keywords_lesson'] . '%');
         }
