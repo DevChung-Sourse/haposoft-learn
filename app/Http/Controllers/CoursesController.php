@@ -19,11 +19,11 @@ class CoursesController extends Controller
         return view('courses.index', compact(['courses', 'teachers', 'tags', 'request']));
     }
 
-    public function show($id, Request $request)
+    public function show(Request $request, $id)
     {
         $course = Course::find($id);
         $lessons = Lesson::lessonsOfCourse($request->all(), $id)->paginate(config('filter.item_page_lessons'));
-        $otherCourses = Course::randomCourses();
+        $otherCourses = Course::randomCourses($id)->get();
         $teachers = $course->teachers()->get();
         return view('courses.show', compact(['course', 'lessons', 'otherCourses', 'teachers', 'request']));
     }

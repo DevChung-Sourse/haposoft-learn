@@ -6,6 +6,6 @@ return [
     ],
     'item_page' => 16,
     'item_page_lessons' => 14,
-    'random_item_other_courses' => 5,
+    'limited_courses' => 5,
 ];
 ?>

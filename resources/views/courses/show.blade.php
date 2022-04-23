@@ -106,7 +106,7 @@
                     <tr>
                         <td class="table-title"><i class="icon-course-info fa-solid fa-money-check-dollar"></i>Price
                         </td>
-                        <td class="info-number">{{ $course->price_dolar }}</td>
+                        <td class="info-number">{{ $course->processed_price }}</td>
                     </tr>
                 </table>
             </div>

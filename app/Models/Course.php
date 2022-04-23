@@ -78,9 +78,9 @@ class Course extends Model
         return number_format($this->lessons()->sum('time')) . " " . "hours";
     }
 
-    public function getPriceDolarAttribute()
+    public function getProcessedPriceAttribute()
     {
-        return $this->price == 0 ? "Free" : $this->price . " $";
+        return $this->price == 0 ? "Free" : number_format($this->price) . " $";
     }
 
     public function scopeSearch($query, $data)
@@ -122,8 +122,8 @@ class Course extends Model
         return $query;
     }
 
-    public function scopeRandomCourses($query)
+    public function scopeRandomCourses($query, $id)
     {
-        return $query->get()->random(config('filter.random_item_other_courses'));
+        return $query->where('id', '!=', $id)->limit(config('filter.limited_courses'));
     }
 }
