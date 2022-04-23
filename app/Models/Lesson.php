@@ -48,7 +48,7 @@ class Lesson extends Model
         return $this->hasMany(Document::class, 'lesson_id');
     }
 
-    public function scopeLessonsOfCourse($query, $data, $id)
+    public function scopeSearch($query, $data, $id)
     {
         $query->where('course_id', $id)->orderBy('created_at', config('filter.sort.desc'));
         if (isset($data['keywords_lesson'])) {
