@@ -9,7 +9,7 @@ use App\Models\User;
 
 class UserCourseController extends Controller
 {
-    public function __constructor()
+    public function __construct()
     {
         $this->middleware('isStudent');
     }

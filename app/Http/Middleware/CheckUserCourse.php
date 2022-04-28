@@ -19,7 +19,7 @@ class CheckUserCourse
     public function handle(Request $request, Closure $next)
     {
         foreach (Auth::user()->teacher()->get() as $item) {
-            if(Auth::id() === $item->id) {
+            if (Auth::id() === $item->id) {
                 return redirect()->back()->with('message_teacher', 'Teacher do not register this course');
             }
         }
