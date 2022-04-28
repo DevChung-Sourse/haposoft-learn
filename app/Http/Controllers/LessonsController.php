@@ -23,7 +23,7 @@ class LessonsController extends Controller
         } else {
             $countAllDocument = $documents->count();
             $countDocumentAccomplished = Auth::user()->getCountUserDocuments($lessonId);
-            $result = $countDocumentAccomplished / $countAllDocument * 100;
+            $result = number_format($countDocumentAccomplished / $countAllDocument * 100, 2, '.');
             $lesson->users()->detach(Auth::id());
             $lesson->users()->attach(Auth::id(), ['progress' => $result]);
         }

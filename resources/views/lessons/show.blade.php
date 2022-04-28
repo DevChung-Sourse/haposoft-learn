@@ -16,10 +16,10 @@
                 <div class="detail-left-img"><img src="{{ $course->thumbnail }}" alt="Anh course"></div>
                 <div class="progress mb-4">
                     <div class="progress-bar bg-success" role="progressbar"
-                        style="width: {{ number_format($result, 2, '.') }}%;"
-                        aria-valuenow="{{ number_format($result, 2, '.') }}"
-                        aria-valuemin="{{ number_format($result, 2, '.') }}" aria-valuemax="100">{{
-                        number_format($result, 2, '.') }} %</div>
+                        style="width: {{ $result }}%;"
+                        aria-valuenow="{{ $result }}"
+                        aria-valuemin="{{ $result }}" aria-valuemax="100">{{
+                        $result }} %</div>
                 </div>
                 <div id="accordion" class="accordion">
                     <div class="d-flex accourdion-detail">
@@ -58,7 +58,6 @@
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                         <div class="card-body">
-                            {{-- @dd(Auth::user()->count_user_documents) --}}
                             @foreach ($documents as $document)
                             <div class="lessons-item row">
                                 <p class="col-md-9 lesson-item-title row">
