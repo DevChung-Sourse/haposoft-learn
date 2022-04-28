@@ -6,6 +6,9 @@
             {{ session()->get('message') }}
         </div>
         @endif
+        @if (session()->has('message_login'))
+        <div class="message_login" id="message_login"></div>
+        @endif
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" name="email" class="form-control @error('email') is-invalid login @enderror" id="email"

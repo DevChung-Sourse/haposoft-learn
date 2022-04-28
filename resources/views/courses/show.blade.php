@@ -9,6 +9,12 @@
             <li class="breadcrumb-item active" aria-current="page">Course detail</li>
         </ol>
     </nav>
+    @if ($message = Session::get('message_teacher'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>{{ $message }}</strong>
+    </div>
+    @endif
     <div class="detail row">
         <div class="detail-left col-md-8">
             <div class="detail-left-body">
@@ -36,13 +42,37 @@
                     </div>
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body pb-5">
-                            <form action="" method="GET" class="form-lessons">
-                                <input type="text" id="keywords_lesson" class="form-input-lesson" name="keywords_lesson"
-                                    placeholder="Search..." value="">
-                                <label for="keywords_lesson"><i
-                                        class="fa-solid fa-magnifying-glass search-icon"></i></label>
-                                <button type="submit" class="search-button">Tìm kiếm</button>
-                            </form>
+                            <div class="row form-lessons mx-0">
+                                @if ($message = Session::get('message_join'))
+                                <div class="alert alert-success alert-block">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                                @endif
+                                <form action="" method="GET" class="col-md-9">
+                                    <input type="text" id="keywords_lesson" class="form-input-lesson"
+                                        name="keywords_lesson" placeholder="Search..." value="">
+                                    <label for="keywords_lesson"><i
+                                            class="fa-solid fa-magnifying-glass search-icon"></i></label>
+                                    <button type="submit" class="search-button">Tìm kiếm</button>
+                                </form>
+                                <form class="col-md-3" action="@if(Auth::user() == null || Auth::user()->getUserCourse($course->id) === 0)
+                                        {{ route('user-course.store') }}
+                                        @else{{ route('user-course.update', $course->id) }}@endif" method="POST">
+                                    @csrf
+                                    @if (Auth::user() != null)
+                                    <input type="hidden" name="_method" @if (Auth::user()->getUserCourse($course->id) >
+                                    0) value="PATCH" @endif>
+                                    @endif
+                                    <input type="hidden" name="hidden" value="0">
+                                    <input type="hidden" name="course_id" value="{{ $course->id }}">
+                                    <button type="submit"
+                                        class="button-custom-circle register-course {{ $course->danger_button }}" {{
+                                        $course->disable_button }}>
+                                        {{ $course->text_button }}
+                                    </button>
+                                </form>
+                            </div>
                             @include('lessons.lesson')
                         </div>
                     </div>

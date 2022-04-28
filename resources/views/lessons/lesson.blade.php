@@ -13,3 +13,4 @@
     @endforeach
     {!! $lessons->links() !!}
 </div>
+

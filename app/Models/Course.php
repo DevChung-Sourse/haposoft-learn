@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Course extends Model
 {
@@ -30,7 +31,7 @@ class Course extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_courses', 'course_id', 'user_id');
+        return $this->belongsToMany(User::class, 'user_courses', 'course_id', 'user_id')->withPivot('status')->withTimestamps();
     }
 
     /**
@@ -81,6 +82,26 @@ class Course extends Model
     public function getProcessedPriceAttribute()
     {
         return $this->price == 0 ? "Free" : number_format($this->price) . " $";
+    }
+
+    public function getStatusCourse($data)
+    {
+        return $this->users()->where('user_id', $data)->pluck('status')->first();
+    }
+
+    public function getDisableButtonAttribute()
+    {
+        return $this->getStatusCourse(Auth::id()) === 0 || $this->getStatusCourse(Auth::id()) === 1 ? "disabled" : "";
+    }
+
+    public function getDangerButtonAttribute()
+    {
+        return $this->getStatusCourse(Auth::id()) === 0 || $this->getStatusCourse(Auth::id()) === 1 ? "bg-danger" : "";
+    }
+
+    public function getTextButtonAttribute()
+    {
+        return $this->getStatusCourse(Auth::id()) === 0 || $this->getStatusCourse(Auth::id()) === 1 ? "Đã đăng kí khóa học" : "Đăng kí khóa học";
     }
 
     public function scopeSearch($query, $data)

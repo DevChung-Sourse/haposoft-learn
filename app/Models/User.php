@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -65,7 +66,7 @@ class User extends Authenticatable
      */
     public function userCourses()
     {
-        return $this->belongsToMany(Course::class, 'user_courses', 'user_id', 'course_id');
+        return $this->belongsToMany(Course::class, 'user_courses', 'user_id', 'course_id')->withPivot('status')->withTimestamps();
     }
 
     /**
@@ -75,7 +76,7 @@ class User extends Authenticatable
      */
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class, 'user_lessons', 'user_id', 'lesson_id');
+        return $this->belongsToMany(Lesson::class, 'user_lessons', 'user_id', 'lesson_id')->withTimestamps();
     }
 
     /**
@@ -86,6 +87,41 @@ class User extends Authenticatable
     public function reviews()
     {
         return $this->hasMany(Review::class, 'user_id');
+    }
+
+    /**
+     * The documents that belong to the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function documents()
+    {
+        return $this->belongsToMany(Document::class, 'document_users')->withTimestamps();
+    }
+
+    public function getCountUserDocuments($data)
+    {
+        return $this->documents()->where('lesson_id', $data)->pluck('document_id')->count();
+    }
+
+    public function formatButtonDisable($data)
+    {
+        return $this->documents()->where('document_id', $data)->count() > 0 ? 'disabled' : '';
+    }
+
+    public function addClassDisabled($data)
+    {
+        return $this->documents()->where('document_id', $data)->count() > 0 ? 'bg-danger' : '';
+    }
+
+    public function changeTextButton($data)
+    {
+        return $this->documents()->where('document_id', $data)->count() > 0 ? 'Reviewed' : 'Review';
+    }
+
+    public function getUserCourse($data)
+    {
+        return $this->userCourses()->where('course_id', $data)->count();
     }
 
     public function scopeTeacher($query)

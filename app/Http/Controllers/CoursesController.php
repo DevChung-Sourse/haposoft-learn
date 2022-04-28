@@ -7,7 +7,9 @@ use App\Models\Course;
 use App\Models\User;
 use App\Models\Tag;
 use App\Models\Lesson;
+use App\Models\UserCourse;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CoursesController extends Controller
 {
@@ -25,6 +27,7 @@ class CoursesController extends Controller
         $lessons = $course->lessons()->search($request->all())->paginate(config('filter.item_page_lessons'));
         $otherCourses = Course::randomCourses($id)->get();
         $teachers = $course->teachers()->get();
-        return view('courses.show', compact(['course', 'lessons', 'otherCourses', 'teachers', 'request']));
+        $user = User::find($id);
+        return view('courses.show', compact(['course', 'lessons', 'otherCourses', 'teachers', 'user', 'request']));
     }
 }
