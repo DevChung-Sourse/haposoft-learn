@@ -153,27 +153,27 @@ class Course extends Model
 
     public function getPercentVoteFiveAttribute()
     {
-        return $this->vote_five_star / $this->count_star * 100;
+        return $this->getVoteFiveStarAttribute() / $this->getCountStarAttribute() * 100;
     }
 
     public function getPercentVoteFourAttribute()
     {
-        return $this->vote_four_star / $this->count_star * 100;
+        return $this->getVoteFourStarAttribute() / $this->getCountStarAttribute() * 100;
     }
 
     public function getPercentVoteThreeAttribute()
     {
-        return $this->vote_three_star / $this->count_star * 100;
+        return $this->getVoteThreeStarAttribute() / $this->getCountStarAttribute() * 100;
     }
 
     public function getPercentVoteTwoAttribute()
     {
-        return $this->vote_two_star / $this->count_star * 100;
+        return $this->getVoteTwoStarAttribute() / $this->getCountStarAttribute() * 100;
     }
 
     public function getPercentVoteOneAttribute()
     {
-        return $this->vote_one_star / $this->count_star * 100;
+        return $this->getVoteOneStarAttribute() / $this->getCountStarAttribute() * 100;
     }
 
     public function scopeSearch($query, $data)

@@ -32,9 +32,4 @@ class Review extends Model
     {
         return $this->belongsTo(Course::class, 'course_id');
     }
-
-    public function getFormatTimeAttribute()
-    {
-        return $this->created_at->format('F jS Y \at h:i A');
-    }
 }

@@ -136,14 +136,14 @@ class User extends Authenticatable
         return $this->address == null ? 'Address' : $this->address;
     }
 
-    public function getFormatAboutMeAttribute()
+    public function getFormatAboutMeAttribute($data)
     {
-        return $this->about_me == null ? '' : $this->about_me;
+        return $this->where('about_me', $data) == null ? '' : $data;
     }
 
-    public function getFormatFullNameAttribute()
+    public function getFormatFullNameAttribute($data)
     {
-        return $this->full_name == null ? 'Your name' : $this->full_name;
+        return $this->where('full_name', $data) == null ? 'Your name' : $data;
     }
 
     public function getUserCourse($data)
@@ -168,9 +168,9 @@ class User extends Authenticatable
 
     public function formatTextLearnButton($data)
     {
-        if ((int)$this->progressOfLesson($data) >= 100) {
+        if ((int) $this->progressOfLesson($data) >= 100) {
             return "Learned";
-        } elseif ((int)$this->progressOfLesson($data) > 0) {
+        } elseif ((int) $this->progressOfLesson($data) > 0) {
             return "Learning";
         } else {
             return "Learn";
@@ -179,7 +179,7 @@ class User extends Authenticatable
 
     public function addClassLearnedButton($data)
     {
-        return (int)$this->progressOfLesson($data) >= 100 ? "bg-danger" : "";
+        return (int) $this->progressOfLesson($data) >= 100 ? "bg-danger" : "";
     }
 
     public function scopeTeacher($query)

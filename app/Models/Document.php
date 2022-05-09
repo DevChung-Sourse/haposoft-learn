@@ -43,4 +43,9 @@ class Document extends Model
     {
         return $this->lesson()->first()->course_id;
     }
+
+    public function checkLessonIdCourseId($lessonId, $courseId)
+    {
+        return $this->where('lesson_id', $lessonId) && $this->where('course_id', $courseId) ? true : false;
+    }
 }

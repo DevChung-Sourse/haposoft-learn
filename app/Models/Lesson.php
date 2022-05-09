@@ -56,7 +56,7 @@ class Lesson extends Model
 
     public function lessonIsStarted()
     {
-        return $this->have_user == 0 ? true : false;
+        return $this->getHaveUserAttribute() == 0 ? true : false;
     }
 
     public function getCheckRegisterCourseAttribute()

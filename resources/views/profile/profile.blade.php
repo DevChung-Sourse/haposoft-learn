@@ -21,7 +21,7 @@
                     @endif
                 </label>
                 <div class="profile-name">
-                    <p class="name">{{ Auth::user()->format_full_name }}</p>
+                    <p class="name">{{ Auth::user()->getFormatFullNameAttribute(Auth::user()->full_name) }}</p>
                 </div>
                 <div class="profile-email">
                     <p class="email">{{ Auth::user()->email }}</p>
@@ -33,7 +33,7 @@
                 <div class="profile-infor"><i class="fa-solid fa-phone"></i>{{ Auth::user()->format_value_phone }}</div>
                 <div class="profile-infor"><i class="fa-solid fa-house-chimney"></i>{{
                     Auth::user()->format_value_address }}</div>
-                <div class="profile-info-about">{{ Auth::user()->format_about_me }}</div>
+                <div class="profile-info-about">{{ Auth::user()->getFormatAboutMeAttribute(Auth::user()->about_me) }}</div>
             </div>
         </div>
         <div class="profile-right col-md-9">

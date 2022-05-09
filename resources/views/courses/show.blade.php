@@ -182,7 +182,7 @@
                                                     <img src="{{ asset('images/star_w.png') }}" alt="star img">
                                                     @endfor
                                             </div>
-                                            <span class="review-time">{{ $review->format_time }}</span>
+                                            <span class="review-time">{{ $review->created_at }}</span>
                                         </div>
                                         <div class="review-comment-data py-3">{{ $review->comments }}</div>
                                     </div>

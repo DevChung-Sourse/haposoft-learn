@@ -12,7 +12,7 @@ class DocumentUserController extends Controller
     public function store(Request $request)
     {
         $document = Document::find($request['document_id']);
-        if ($document->lesson_id == $request['lesson_id'] && $document->course_id == $request['course_id']) {
+        if ($document->checkLessonIdCourseId($request['lesson_id'], $request['course_id'])) {
             Auth::user()->documents()->attach($request['document_id']);
         }
         return redirect()->back()->with('message_doument_user', 'Accomplished!');
