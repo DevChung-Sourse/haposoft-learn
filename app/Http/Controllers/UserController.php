@@ -17,9 +17,9 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         if ($request->file('file')) {
-            $url = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
+            $urlImageAvatar = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
         } else {
-            $url = Auth::user()->avatar;
+            $urlImageAvatar = Auth::user()->avatar;
         }
         if ($request['about']) {
             $about = $request['about'];
@@ -32,7 +32,7 @@ class UserController extends Controller
             'birthday' => $request['birthday'],
             'address' => $request['address'],
             'about_me' => $about,
-            'avatar' => $url,
+            'avatar' => $urlImageAvatar,
         ];
         Auth::user()->update($data);
         return redirect()->back()->with('message-profile', 'Update profile successfully');
