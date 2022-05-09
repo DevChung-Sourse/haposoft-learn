@@ -98,7 +98,7 @@ class Course extends Model
     {
         if ($this->getStatusCourse(Auth::id()) === 0) {
             return "bg-danger";
-        } else if ($this->getStatusCourse(Auth::id()) === 1) {
+        } elseif ($this->getStatusCourse(Auth::id()) === 1) {
             return "bg-light text-dark";
         } else {
             return "";
@@ -109,7 +109,7 @@ class Course extends Model
     {
         if ($this->getStatusCourse(Auth::id()) === 0) {
             return "Đã đăng kí khóa học";
-        } else if ($this->getStatusCourse(Auth::id()) === 1) {
+        } elseif ($this->getStatusCourse(Auth::id()) === 1) {
             return "Đã kết thúc khóa học";
         } else {
             return "Đăng kí khóa học";
