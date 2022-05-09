@@ -7,8 +7,14 @@
         @else
         <p class="col-md-9 lesson-item-title">{{ $key + 1 }}. {{ $lesson->description }}</p>
         @endif
+        @if (Auth::user() != null && Auth::user()->getUserCourse($course->id))
         <p class="col-md-3 btn-learn"><a href="{{ route('courses.lesson.show', [$course->id, $lesson->id]) }}"
-                class="button-custom-circle button">Learn</a></p>
+                class="button-custom-circle button {{ Auth::user()->addClassLearnedButton($lesson->id) }}">{{
+                Auth::user()->formatTextLearnButton($lesson->id) }}</a></p>
+        @else
+        <p class="col-md-3 btn-learn"><button disabled="disabled"
+                class="button-custom-circle button text-light bg-secondary border-0">Learn</button></p>
+        @endif
     </div>
     @endforeach
     {!! $lessons->links() !!}

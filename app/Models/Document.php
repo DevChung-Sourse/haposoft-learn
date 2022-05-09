@@ -38,4 +38,9 @@ class Document extends Model
     {
         return $this->belongsToMany(User::class, 'document_users')->withTimestamps();
     }
+
+    public function getCourseIdAttribute()
+    {
+        return $this->lesson()->first()->course_id;
+    }
 }

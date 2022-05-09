@@ -9,11 +9,6 @@ use App\Models\User;
 
 class UserCourseController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('isStudent');
-    }
-
     public function store(Request $request)
     {
         $data = [

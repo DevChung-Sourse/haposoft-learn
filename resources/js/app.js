@@ -6,3 +6,4 @@ require('./feedback');
 require('./loginRegister');
 require('./filterCourses');
 require('./coursesDetail');
+require('./checked');

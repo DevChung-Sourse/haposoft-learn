@@ -1,0 +1,36 @@
+.reset-container {
+  height: 50vh;
+  width: 100%;
+
+  .reset-box {
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+
+    .reset-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #b2d235;
+    }
+
+    .reset-subtitle {
+      font-size: 20px;
+      font-weight: 700;
+      color: #505353;
+    }
+  }
+
+  .reset-form-custom {
+    width: 40%;
+
+    .label-email {
+      font-size: 20px;
+      font-weight: 700;
+      color: #505353;
+    }
+
+    .input-form {
+      width: 100%;
+    }
+  }
+}

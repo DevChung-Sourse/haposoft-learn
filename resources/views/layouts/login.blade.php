@@ -12,7 +12,7 @@
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" name="email" class="form-control @error('email') is-invalid login @enderror" id="email"
-                aria-describedby="emailHelp" value="@error('email') {{ old('email') }} @enderror">
+                aria-describedby="emailHelp" value="{{ old('email') }}">
             @error ('email')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -32,7 +32,7 @@
         <div class="form-check check">
             <input type="checkbox" class="form-check-input" name="rememberme" id="checkbox" value="true">
             <label class="form-check-label" for="checkbox">Remember me</label>
-            <p class="text">Forgot password</p>
+            <p class="text"><a href="{{ route('password.request') }}">Forgot password</a></p>
         </div>
         @if (session()->has('error'))
         <div class="alert alert-danger" id="error">
@@ -44,10 +44,10 @@
     <div class="login-with">
         <p class="login-with-text">Login with</p>
         <div class="login-with-social">
-            <button class="btn-login-with btn-google">
+            <a href="{{ url('/google') }}" class="btn-login-with btn-google d-flex justify-content-center align-items-center">
                 <i class="fa-brands fa-google-plus-g icon"></i>
                 <span>Google</span>
-            </button>
+            </a>
             <button class="btn-login-with btn-facebook">
                 <i class="fa-brands fa-facebook-f icon"></i>
                 <span>Facebook</span>

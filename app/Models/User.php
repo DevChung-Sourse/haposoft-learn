@@ -33,6 +33,8 @@ class User extends Authenticatable
         'role',
         'job',
         'avatar',
+        'about_me',
+        'google_id'
     ];
 
     /**
@@ -119,9 +121,65 @@ class User extends Authenticatable
         return $this->documents()->where('document_id', $data)->count() > 0 ? 'Reviewed' : 'Review';
     }
 
+    public function getFormatValueDateAttribute()
+    {
+        return $this->birthday == null ? 'Date of birthday' : $this->birthday;
+    }
+
+    public function getFormatValuePhoneAttribute()
+    {
+        return $this->phone == null ? 'Phone number' : $this->phone;
+    }
+
+    public function getFormatValueAddressAttribute()
+    {
+        return $this->address == null ? 'Address' : $this->address;
+    }
+
+    public function getFormatAboutMeAttribute()
+    {
+        return $this->about_me == null ? '' : $this->about_me;
+    }
+
+    public function getFormatFullNameAttribute()
+    {
+        return $this->full_name == null ? 'Your name' : $this->full_name;
+    }
+
     public function getUserCourse($data)
     {
         return $this->userCourses()->where('course_id', $data)->count();
+    }
+
+    public function checkIsNullLesson($data)
+    {
+        return $this->lessons()->get()->where('id', $data)->first() ? false : true;
+    }
+
+    public function allDocumentLesson($data)
+    {
+        return $this->lessons()->get()->where('id', $data)->first()->document_all_course;
+    }
+
+    public function progressOfLesson($data)
+    {
+        return !$this->checkIsNullLesson($data) ? number_format($this->getCountUserDocuments($data) / $this->allDocumentLesson($data) * 100, 2) : 0;
+    }
+
+    public function formatTextLearnButton($data)
+    {
+        if ((int)$this->progressOfLesson($data) >= 100) {
+            return "Learned";
+        } elseif ((int)$this->progressOfLesson($data) > 0) {
+            return "Learning";
+        } else {
+            return "Learn";
+        }
+    }
+
+    public function addClassLearnedButton($data)
+    {
+        return (int)$this->progressOfLesson($data) >= 100 ? "bg-danger" : "";
     }
 
     public function scopeTeacher($query)

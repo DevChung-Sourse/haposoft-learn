@@ -91,17 +91,89 @@ class Course extends Model
 
     public function getDisableButtonAttribute()
     {
-        return $this->getStatusCourse(Auth::id()) === 0 || $this->getStatusCourse(Auth::id()) === 1 ? "disabled" : "";
+        return $this->getStatusCourse(Auth::id()) === 1 ? "disabled" : "";
     }
 
     public function getDangerButtonAttribute()
     {
-        return $this->getStatusCourse(Auth::id()) === 0 || $this->getStatusCourse(Auth::id()) === 1 ? "bg-danger" : "";
+        if ($this->getStatusCourse(Auth::id()) === 0) {
+            return "bg-danger";
+        } else if ($this->getStatusCourse(Auth::id()) === 1) {
+            return "bg-light text-dark";
+        } else {
+            return "";
+        }
     }
 
     public function getTextButtonAttribute()
     {
-        return $this->getStatusCourse(Auth::id()) === 0 || $this->getStatusCourse(Auth::id()) === 1 ? "Đã đăng kí khóa học" : "Đăng kí khóa học";
+        if ($this->getStatusCourse(Auth::id()) === 0) {
+            return "Đã đăng kí khóa học";
+        } else if ($this->getStatusCourse(Auth::id()) === 1) {
+            return "Đã kết thúc khóa học";
+        } else {
+            return "Đăng kí khóa học";
+        }
+    }
+
+    public function getAvgStarAttribute()
+    {
+        return $this->reviews()->pluck('vote')->avg();
+    }
+
+    public function getCountStarAttribute()
+    {
+        return $this->reviews()->pluck('vote')->count();
+    }
+
+    public function getVoteFiveStarAttribute()
+    {
+        return $this->reviews()->where('vote', 5)->count();
+    }
+
+    public function getVoteFourStarAttribute()
+    {
+        return $this->reviews()->where('vote', 4)->count();
+    }
+
+    public function getVoteThreeStarAttribute()
+    {
+        return $this->reviews()->where('vote', 3)->count();
+    }
+
+    public function getVoteTwoStarAttribute()
+    {
+        return $this->reviews()->where('vote', 2)->count();
+    }
+
+    public function getVoteOneStarAttribute()
+    {
+        return $this->reviews()->where('vote', 1)->count();
+    }
+
+    public function getPercentVoteFiveAttribute()
+    {
+        return $this->vote_five_star / $this->count_star * 100;
+    }
+
+    public function getPercentVoteFourAttribute()
+    {
+        return $this->vote_four_star / $this->count_star * 100;
+    }
+
+    public function getPercentVoteThreeAttribute()
+    {
+        return $this->vote_three_star / $this->count_star * 100;
+    }
+
+    public function getPercentVoteTwoAttribute()
+    {
+        return $this->vote_two_star / $this->count_star * 100;
+    }
+
+    public function getPercentVoteOneAttribute()
+    {
+        return $this->vote_one_star / $this->count_star * 100;
     }
 
     public function scopeSearch($query, $data)

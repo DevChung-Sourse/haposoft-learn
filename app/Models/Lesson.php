@@ -56,10 +56,17 @@ class Lesson extends Model
 
     public function lessonIsStarted()
     {
-        if ($this->haveUser === 0) {
-            return true;
-        }
-        return false;
+        return $this->have_user == 0 ? true : false;
+    }
+
+    public function getCheckRegisterCourseAttribute()
+    {
+        return $this->course()->first()->users()->pluck('user_id', 'course_id')->count();
+    }
+
+    public function getDocumentAllCourseAttribute()
+    {
+        return $this->documents()->count();
     }
 
     public function scopeSearch($query, $data)

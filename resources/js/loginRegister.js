@@ -4,7 +4,6 @@ const formLogin = $('#formLogin')
 const formRegister = $('#formRegister')
 
 formRegister.click(() => {
-    console.log('click');
   if (!formRegister.hasClass('active-lr') && !register.hasClass('active-display')) {
     $('#loginModal').modal();
     formRegister.addClass('active-lr')
