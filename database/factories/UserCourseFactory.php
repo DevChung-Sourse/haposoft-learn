@@ -19,6 +19,7 @@ class UserCourseFactory extends Factory
         return [
             'user_id' => $this->faker->numberBetween(1, 100),
             'course_id' => $this->faker->numberBetween(1, 100),
+            'status' => $this->faker->numberBetween(0, 1),
         ];
     }
 }

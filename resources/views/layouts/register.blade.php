@@ -4,7 +4,7 @@
         <div class="form-group">
             <label for="exampleInputEmail1">User name:</label>
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                id="exampleInputEmail1" aria-describedby="emailHelp" value="@error('name') {{ old('name') }} @enderror">
+                id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ old('name') }}">
             @error('name')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -14,7 +14,7 @@
         <div class="form-group">
             <label for="exampleInputPassword1">Email:</label>
             <input type="email" name="register_email" class="form-control @error('register_email') is-invalid @enderror"
-                id="exampleInputPassword1" value="@error('register_email') {{ old('email') }} @enderror">
+                id="exampleInputPassword1" value="{{ old('register_email') }}">
             @error('register_email')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>

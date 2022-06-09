@@ -14,6 +14,11 @@
         <div class="detail-left col-md-8">
             <div class="detail-left-body">
                 <div class="detail-left-img"><img src="{{ $course->thumbnail }}" alt="Anh course"></div>
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ $resultProgress }}%;"
+                        aria-valuenow="{{ $resultProgress }}" aria-valuemin="{{ $resultProgress }}" aria-valuemax="100">{{
+                        $resultProgress }} %</div>
+                </div>
                 <div id="accordion" class="accordion">
                     <div class="d-flex accourdion-detail">
                         <div class="accordion-btn active-switch" id="headingOne">
@@ -54,12 +59,23 @@
                             @foreach ($documents as $document)
                             <div class="lessons-item row">
                                 <p class="col-md-9 lesson-item-title row">
-                                    <img src="{{ $document->file_path }}" alt="image document" class="document-img col-md-2">
+                                    <img src="{{ $document->file_path }}" alt="image document"
+                                        class="document-img col-md-2">
                                     <span class="document-type col-md-2">{{ $document->type }}</span>
                                     <span class="document-title col-md-8">{{ $document->title }}</span>
                                 </p>
-                                <p class="col-md-3 btn-learn"><a href="#" class="button-custom-circle button">Review</a>
-                                </p>
+                                <div class="col-md-3 btn-learn">
+                                    <form action="{{ route('document-user.store') }}" class="col" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="document_id" value="{{ $document->id }}">
+                                        <input type="hidden" name="lesson_id" value="{{ $lesson->id }}">
+                                        <input type="hidden" name="course_id" value="{{ $course->id }}">
+                                        <button type="submit" {{ Auth::user()->formatButtonDisable($document->id) }}
+                                            class="button-custom-circle button border-0 {{
+                                            Auth::user()->addClassDisabled($document->id) }}">{{
+                                            Auth::user()->changeTextButton($document->id) }}</button>
+                                    </form>
+                                </div>
                             </div>
                             @endforeach
                         </div>
@@ -97,7 +113,16 @@
                     </tr>
                     <tr>
                         <td class="table-title text-center" colspan="2">
-                            <a href="" class="button-custom-circle py-2 px-4">Kết thúc khóa học</a>
+                            <form action="{{ route('user-course.update', $course->id) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <input type="hidden" name="status" value="1">
+                                <button type="submit"
+                                    class="button-custom-circle register-course {{ $course->danger_button }}" {{
+                                    $course->disable_button }}>
+                                    {{ $course->text_button }}
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 </table>

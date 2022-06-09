@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -32,6 +33,8 @@ class User extends Authenticatable
         'role',
         'job',
         'avatar',
+        'about_me',
+        'google_id'
     ];
 
     /**
@@ -65,7 +68,7 @@ class User extends Authenticatable
      */
     public function userCourses()
     {
-        return $this->belongsToMany(Course::class, 'user_courses', 'user_id', 'course_id');
+        return $this->belongsToMany(Course::class, 'user_courses', 'user_id', 'course_id')->withPivot('status')->withTimestamps();
     }
 
     /**
@@ -75,7 +78,7 @@ class User extends Authenticatable
      */
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class, 'user_lessons', 'user_id', 'lesson_id');
+        return $this->belongsToMany(Lesson::class, 'user_lessons', 'user_id', 'lesson_id')->withTimestamps();
     }
 
     /**
@@ -86,6 +89,97 @@ class User extends Authenticatable
     public function reviews()
     {
         return $this->hasMany(Review::class, 'user_id');
+    }
+
+    /**
+     * The documents that belong to the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function documents()
+    {
+        return $this->belongsToMany(Document::class, 'document_users')->withTimestamps();
+    }
+
+    public function getCountUserDocuments($data)
+    {
+        return $this->documents()->where('lesson_id', $data)->pluck('document_id')->count();
+    }
+
+    public function formatButtonDisable($data)
+    {
+        return $this->documents()->where('document_id', $data)->count() > 0 ? 'disabled' : '';
+    }
+
+    public function addClassDisabled($data)
+    {
+        return $this->documents()->where('document_id', $data)->count() > 0 ? 'bg-danger' : '';
+    }
+
+    public function changeTextButton($data)
+    {
+        return $this->documents()->where('document_id', $data)->count() > 0 ? 'Reviewed' : 'Review';
+    }
+
+    public function getFormatValueDateAttribute()
+    {
+        return $this->birthday == null ? 'Date of birthday' : $this->birthday;
+    }
+
+    public function getFormatValuePhoneAttribute()
+    {
+        return $this->phone == null ? 'Phone number' : $this->phone;
+    }
+
+    public function getFormatValueAddressAttribute()
+    {
+        return $this->address == null ? 'Address' : $this->address;
+    }
+
+    public function getFormatAboutMeAttribute($data)
+    {
+        return $this->where('about_me', $data) == null ? '' : $data;
+    }
+
+    public function getFormatFullNameAttribute($data)
+    {
+        return $this->where('full_name', $data) == null ? 'Your name' : $data;
+    }
+
+    public function getUserCourse($data)
+    {
+        return $this->userCourses()->where('course_id', $data)->count();
+    }
+
+    public function checkIsNullLesson($data)
+    {
+        return $this->lessons()->get()->where('id', $data)->first() ? false : true;
+    }
+
+    public function allDocumentLesson($data)
+    {
+        return $this->lessons()->get()->where('id', $data)->first()->document_all_course;
+    }
+
+    public function progressOfLesson($data)
+    {
+        return !$this->checkIsNullLesson($data) ? number_format($this->getCountUserDocuments($data) / $this->allDocumentLesson($data) * 100, 2) : 0;
+    }
+
+    public function formatTextLearnButton($data)
+    {
+        if ((int) $this->progressOfLesson($data) >= 100) {
+            return "Learned";
+        } elseif ((int) $this->progressOfLesson($data) > 0) {
+            return "Learning";
+        } else {
+            return "Learn";
+        }
+    }
+
+    public function addClassLearnedButton($data)
+    {
+        return (int) $this->progressOfLesson($data) >= 100 ? "bg-danger" : "";
     }
 
     public function scopeTeacher($query)

@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\LessonsController;
+use App\Http\Controllers\UserCourseController;
+use App\Http\Controllers\DocumentUserController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +23,14 @@ use App\Http\Controllers\LessonsController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::resource('courses', CoursesController::class)->only(['index', 'show']);
-Route::resource('courses.lesson', LessonsController::class);
+Route::resource('courses', CoursesController::class);
 Auth::routes();
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('user-course', UserCourseController::class);
+    Route::resource('courses.lesson', LessonsController::class);
+    Route::resource('document-user', DocumentUserController::class);
+    Route::resource('review', ReviewController::class);
+});
+Route::resource('user-profile', UserController::class);
+Route::get('/google', [\App\Http\Controllers\Api\GoogleController::class, 'getGoogleSignInUrl']);
+Route::get('/google/callback', [\App\Http\Controllers\Api\GoogleController::class, 'loginCallback']);

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Lesson extends Model
 {
@@ -35,7 +36,7 @@ class Lesson extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_lessons', 'lesson_id', 'user_id');
+        return $this->belongsToMany(User::class, 'user_lessons', 'lesson_id', 'user_id')->withPivot('count_documents')->withTimestamps();
     }
 
     /**
@@ -46,6 +47,26 @@ class Lesson extends Model
     public function documents()
     {
         return $this->hasMany(Document::class, 'lesson_id');
+    }
+
+    public function getHaveUserAttribute()
+    {
+        return $this->users()->pluck('user_id')->count();
+    }
+
+    public function lessonIsStarted()
+    {
+        return $this->getHaveUserAttribute() == 0 ? true : false;
+    }
+
+    public function getCheckRegisterCourseAttribute()
+    {
+        return $this->course()->first()->users()->pluck('user_id', 'course_id')->count();
+    }
+
+    public function getDocumentAllCourseAttribute()
+    {
+        return $this->documents()->count();
     }
 
     public function scopeSearch($query, $data)

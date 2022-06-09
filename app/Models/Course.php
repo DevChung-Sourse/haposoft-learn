@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Course extends Model
 {
@@ -30,7 +31,7 @@ class Course extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_courses', 'course_id', 'user_id');
+        return $this->belongsToMany(User::class, 'user_courses', 'course_id', 'user_id')->withPivot('status')->withTimestamps();
     }
 
     /**
@@ -81,6 +82,98 @@ class Course extends Model
     public function getProcessedPriceAttribute()
     {
         return $this->price == 0 ? "Free" : number_format($this->price) . " $";
+    }
+
+    public function getStatusCourse($data)
+    {
+        return $this->users()->where('user_id', $data)->pluck('status')->first();
+    }
+
+    public function getDisableButtonAttribute()
+    {
+        return $this->getStatusCourse(Auth::id()) === 1 ? "disabled" : "";
+    }
+
+    public function getDangerButtonAttribute()
+    {
+        if ($this->getStatusCourse(Auth::id()) === 0) {
+            return "bg-danger";
+        } elseif ($this->getStatusCourse(Auth::id()) === 1) {
+            return "bg-light text-dark";
+        } else {
+            return "";
+        }
+    }
+
+    public function getTextButtonAttribute()
+    {
+        if ($this->getStatusCourse(Auth::id()) === 0) {
+            return "Đã đăng kí khóa học";
+        } elseif ($this->getStatusCourse(Auth::id()) === 1) {
+            return "Đã kết thúc khóa học";
+        } else {
+            return "Đăng kí khóa học";
+        }
+    }
+
+    public function getAvgStarAttribute()
+    {
+        return $this->reviews()->pluck('vote')->avg();
+    }
+
+    public function getCountStarAttribute()
+    {
+        return $this->reviews()->pluck('vote')->count();
+    }
+
+    public function getVoteFiveStarAttribute()
+    {
+        return $this->reviews()->where('vote', 5)->count();
+    }
+
+    public function getVoteFourStarAttribute()
+    {
+        return $this->reviews()->where('vote', 4)->count();
+    }
+
+    public function getVoteThreeStarAttribute()
+    {
+        return $this->reviews()->where('vote', 3)->count();
+    }
+
+    public function getVoteTwoStarAttribute()
+    {
+        return $this->reviews()->where('vote', 2)->count();
+    }
+
+    public function getVoteOneStarAttribute()
+    {
+        return $this->reviews()->where('vote', 1)->count();
+    }
+
+    public function getPercentVoteFiveAttribute()
+    {
+        return $this->getVoteFiveStarAttribute() / $this->getCountStarAttribute() * 100;
+    }
+
+    public function getPercentVoteFourAttribute()
+    {
+        return $this->getVoteFourStarAttribute() / $this->getCountStarAttribute() * 100;
+    }
+
+    public function getPercentVoteThreeAttribute()
+    {
+        return $this->getVoteThreeStarAttribute() / $this->getCountStarAttribute() * 100;
+    }
+
+    public function getPercentVoteTwoAttribute()
+    {
+        return $this->getVoteTwoStarAttribute() / $this->getCountStarAttribute() * 100;
+    }
+
+    public function getPercentVoteOneAttribute()
+    {
+        return $this->getVoteOneStarAttribute() / $this->getCountStarAttribute() * 100;
     }
 
     public function scopeSearch($query, $data)

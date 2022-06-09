@@ -4,7 +4,6 @@ const formLogin = $('#formLogin')
 const formRegister = $('#formRegister')
 
 formRegister.click(() => {
-    console.log('click');
   if (!formRegister.hasClass('active-lr') && !register.hasClass('active-display')) {
     $('#loginModal').modal();
     formRegister.addClass('active-lr')
@@ -28,6 +27,10 @@ if ($('#error').hasClass('alert-danger')) {
     $('#loginModal').modal();
 }
 
+if ($('#message_login').hasClass('message_login')) {
+    $('#loginModal').modal();
+}
+
 if ($('input').hasClass('login')) {
     $('#loginModal').modal();
 }
@@ -39,3 +42,4 @@ if ($('#success').hasClass('alert-success')) {
 if ($('input').hasClass('is-invalid')) {
     $('#loginModal').modal();
 }
+

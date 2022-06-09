@@ -1,0 +1,212 @@
+.profile {
+  height: 100%;
+  width: 90%;
+  padding-top: 50px;
+
+  .profile-right {
+    width: 100%;
+
+    .profile-right-content {
+      width: 96%;
+      height: 100%;
+    }
+  }
+}
+
+.profile-title {
+  border-bottom: 1px solid #dcdcdc;
+  width: 100%;
+
+  .profile-img {
+    background-color: #fff;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    position: relative;
+    text-align: center;
+
+    .profile-avatar-icon {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    i {
+      font-size: 40px;
+      color: #505353;
+    }
+
+    img {
+      width: 20vw;
+      height: 20vw;
+      border-radius: 50%;
+    }
+
+    .input-file {
+      opacity: 0;
+      position: absolute;
+    }
+  }
+
+  .profile-name {
+    text-align: center;
+    margin-top: 15px;
+
+    .name {
+      font-size: 25px;
+      font-weight: 700;
+      color: #505353;
+      margin: 0;
+    }
+  }
+
+  .profile-email {
+    text-align: center;
+    margin-top: 0;
+
+    .email {
+      font-size: 18px;
+      font-weight: 400;
+      color: #505353;
+    }
+  }
+}
+
+.profile-info {
+  margin-top: 10px;
+
+  .profile-infor {
+    padding: 10px 0px;
+    border-bottom: 1px solid #dcdcdc;
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #505353;
+
+    i {
+      padding-right: 24px;
+    }
+  }
+
+  .profile-info-about {
+    margin-top: 20px;
+    text-align: justify;
+    padding: 0 5px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #505353;
+  }
+}
+
+.profile-courses {
+  margin-top: 120px;
+
+  .profile-courses-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .profile-courses-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+
+  .profile-item-course {
+    width: 65px;
+    height: 100px;
+    text-align: center;
+    margin: 0 20px;
+
+    .profile-item-img {
+      width: 65px;
+      height: 65px;
+      border: 1px solid #dcdcdc;
+      border-radius: 50%;
+      background: #3490dc;
+    }
+    .profile-item-title {
+      margin-top: 10px;
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .color-title-add-more {
+      color: #b2d235;
+    }
+  }
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  border-bottom: 1px solid #b2d235;
+  border-top: 1px solid #b2d235;
+}
+
+.custom-form {
+  width: 100%;
+  margin: 0;
+  margin-top: 25px;
+
+  .custom-input {
+    width: 100%;
+    margin: 0;
+
+    label {
+      font-size: 20px;
+      font-weight: 700;
+      color: #505353;
+    }
+
+    .input {
+      width: 90%;
+      height: 50px;
+      border: 1px solid #d6d6d6;
+      border-radius: 5px;
+      padding-left: 10px;
+    }
+  }
+
+  .about-me {
+    width: 95%;
+    height: 160px;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+  }
+
+  .custom-button {
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+.profile-item-add {
+  width: 65px;
+  height: 65px;
+  border: 1px solid #b2d235;
+  margin: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: #b2d235;
+    font-size: 36px;
+    font-weight: 700;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
