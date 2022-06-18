@@ -58,7 +58,7 @@ class User extends Authenticatable
 
     public function teacherCourses()
     {
-        return $this->belongsToMany(Course::class, 'teacher_courses', 'user_id', 'course_id');
+        return $this->belongsToMany(Course::class, 'teacher_courses', 'user_id', 'course_id')->withTimestamps();
     }
 
     /**
@@ -185,5 +185,23 @@ class User extends Authenticatable
     public function scopeTeacher($query)
     {
         return $query->where('role', self::ROLE_TEACHER);
+    }
+
+    public function getTeacher()
+    {
+        return $this->role === self::ROLE_TEACHER;
+    }
+
+    public function getCoursesOfUser()
+    {
+        $courses = $this->userCourses()->get();
+        return $courses;
+    }
+
+    public function getCoursesOfTeacher()
+    {
+        if ($this->getTeacher()) {
+            return $this->teacherCourses()->get();
+        }
     }
 }

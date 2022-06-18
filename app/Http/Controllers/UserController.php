@@ -17,6 +17,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         if ($request->file('file')) {
+            dd($request->file('file'));
             $urlImageAvatar = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
         } else {
             $urlImageAvatar = Auth::user()->avatar;

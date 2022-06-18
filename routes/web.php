@@ -9,6 +9,10 @@ use App\Http\Controllers\UserCourseController;
 use App\Http\Controllers\DocumentUserController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\MyCourseController;
+use App\Http\Controllers\ManagerCourseController;
+use App\Http\Controllers\CreateLessonsController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
@@ -32,5 +36,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('review', ReviewController::class);
 });
 Route::resource('user-profile', UserController::class);
+Route::resource('my-course', MyCourseController::class);
+Route::resource('manager-course', ManagerCourseController::class);
+Route::resource('manager-course.lesson', CreateLessonsController::class);
+Route::resource('manager-course.lesson.document', DocumentController::class);
 Route::get('/google', [\App\Http\Controllers\Api\GoogleController::class, 'getGoogleSignInUrl']);
 Route::get('/google/callback', [\App\Http\Controllers\Api\GoogleController::class, 'loginCallback']);
