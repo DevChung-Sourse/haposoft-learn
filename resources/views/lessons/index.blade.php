@@ -5,7 +5,7 @@
     <div class="row justify-content-center pt-5">
         <div class="col-md-12" style="height: 100%; background: #fff;">
             <h1>Manager lessons:</h1>
-            <a href="{{ route('manager-course.lesson.create', $managerCourseId) }}" class="btn">Create courses</a>
+            <a href="{{ route('manager-course.lesson.create', $managerCourseId) }}" class="btn-manager btn-cancel my-3">Create lesson</a>
             <table class="table">
                 <thead class="thead-light">
                     <tr>
@@ -23,19 +23,20 @@
                         <td>{{ $lesson->title }}</td>
                         <td>{{ $lesson->description }}</td>
                         <td>{{ $lesson->requirements }}</td>
-                        <td>
-                            <a href="{{ route('manager-course.lesson.show', [$managerCourseId, $lesson->id]) }}" class="btn">Documents</a>
-                            <a href="{{ route('manager-course.lesson.edit', [$managerCourseId, $lesson->id]) }}" class="btn">Edit</a>
+                        <td class="flex-col">
+                            <a href="{{ route('manager-course.lesson.show', [$managerCourseId, $lesson->id]) }}" class="btn-custom-manager btn-cancel">Documents</a>
+                            <a href="{{ route('manager-course.lesson.edit', [$managerCourseId, $lesson->id]) }}" class="btn-custom-manager btn-cancel">Edit</a>
                             <form action="{{ route('manager-course.lesson.destroy', [$managerCourseId, $lesson->id]) }}" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit">Delete</button>
+                                <button type="submit" class="btn-manager bg-danger">Delete</button>
                             </form>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+            <a href="{{ route('manager-course.index') }}" class="btn-manager btn-cancel my-3 bg-secondary">Courses</a>
         </div>
     </div>
 </div>

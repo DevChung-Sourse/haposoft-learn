@@ -20,8 +20,8 @@ class LessonFactory extends Factory
             'title' => $this->faker->text(),
             'description' => $this->faker->text(),
             'requirements' => $this->faker->text(),
-            'time' => $this->faker->numberBetween(10, 30),
-            'course_id' => $this->faker->numberBetween(1, 50),
+            'time' => $this->faker->numberBetween(10, 20),
+            'course_id' => $this->faker->numberBetween(1, 20),
         ];
     }
 }

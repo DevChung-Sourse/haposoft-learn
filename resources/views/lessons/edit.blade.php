@@ -26,7 +26,8 @@
                     <label for="timeLesson">Time read</label>
                     <input type="number" class="form-control" id="timeLesson" min="5" max="12" placeholder="timeLesson" name="timeLesson" value="{{ $lesson->time }}" >
                 </div>
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn-manager btn-cancel my-3">Update</button>
+                <a href="{{ route('manager-course.lesson.index', $id) }}" class="btn-manager btn-cancel bg-secondary">Cancel</a>
             </div>
         </div>
     </form>

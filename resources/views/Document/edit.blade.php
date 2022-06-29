@@ -19,7 +19,8 @@
                     <label for="fileDocument">File:</label>
                     <input type="file" class="form-control" id="fileDocument" placeholder="requirements" name="fileDocument" value="{{ $document->file_path }}">
                 </div>
-                <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="submit" class="btn-manager btn-cancel my-3">Edit</button>
+                <a href="{{ route('manager-course.lesson.show', [$courseId, $lessonId]) }}" class="btn-manager btn-cancel bg-secondary">Cancel</a>
             </div>
         </div>
     </form>

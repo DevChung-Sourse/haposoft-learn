@@ -27,6 +27,7 @@ class GoogleController extends Controller
                 'name' => $googleUser->name,
                 'email' => $googleUser->email,
                 'google_id' => $googleUser->id,
+                'password' => bcrypt('12345678'),
                 'avatar' => $googleUser->avatar,
             ]);
             Auth::login($dataUser);

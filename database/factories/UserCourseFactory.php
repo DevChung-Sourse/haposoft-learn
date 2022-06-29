@@ -17,8 +17,8 @@ class UserCourseFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->numberBetween(1, 100),
-            'course_id' => $this->faker->numberBetween(1, 100),
+            'user_id' => $this->faker->numberBetween(1, 20),
+            'course_id' => $this->faker->numberBetween(1, 20),
             'status' => $this->faker->numberBetween(0, 1),
         ];
     }

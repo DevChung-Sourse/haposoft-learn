@@ -9,7 +9,7 @@
         <p class="banner-content-desc">
             Interactive lessons. "on-the-top"<br>practice, per supports
         </p>
-        <button class="banner-content-btn btn">Start Learn Now</button>
+        <a href="{{ route('courses.index') }}" class="banner-content-btn btn">Start Learn Now</a>
     </div>
 
 </div>
@@ -23,7 +23,7 @@
         <div class="card-content">
             <p class="card-content-title">{{ $course->title }}</p>
             <p class="card-content-decs">{{ $course->description }}</p>
-            <a href="" class="card-btn btn">Take This Course</a>
+            <a href="{{ route('courses.show', $course->id) }}" class="card-btn btn">Take This Course</a>
         </div>
     </div>
     @endforeach
@@ -40,12 +40,12 @@
             <div class="card-content">
                 <p class="card-content-title">{{ $course->title }}</p>
                 <p class="card-content-decs">{{ $course->description }}</p>
-                <a href="" class="card-btn btn">Take This Course</a>
+                <a href="{{ route('courses.show', $course->id) }}" class="card-btn btn">Take This Course</a>
             </div>
         </div>
         @endforeach
     </div>
-    <a href="#" class="other-courses-link">View All Our Courses <i class="fa-solid fa-arrow-right-long"></i></a>
+    <a href="{{ route('courses.index') }}" class="other-courses-link">View All Our Courses <i class="fa-solid fa-arrow-right-long"></i></a>
 </div>
 
 <div class="why-learn">

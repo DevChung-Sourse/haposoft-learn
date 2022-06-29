@@ -26,7 +26,8 @@
                     <label for="imageCourse">Image</label>
                     <input type="file" class="form-control" id="imageCourse" placeholder="image" name="imageCourse">
                 </div>
-                <button type="submit" class="btn btn-primary">update</button>
+                <button type="submit" class="btn-manager btn-primary">update</button>
+                <a href="{{ route('manager-course.index') }}" class="btn-manager btn-cancel bg-secondary">Cancel</a>
             </div>
         </div>
     </form>

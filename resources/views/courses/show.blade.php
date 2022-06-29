@@ -18,7 +18,13 @@
     <div class="detail row">
         <div class="detail-left col-md-8">
             <div class="detail-left-body">
-                <div class="detail-left-img"><img src="{{ $course->thumbnail }}" alt="Anh course"></div>
+                <div class="detail-left-img">
+                    @if($course->id <= 20)
+                        <img src="{{ $course->thumbnail }}" alt="list-course-html" class="list-course-img">
+                    @else
+                        <img src="{{ asset('storage/'.$course->thumbnail) }}"  class="list-course-img"/>
+                    @endif
+                </div>
                 <div id="accordion" class="accordion">
                     <div class="d-flex accourdion-detail">
                         <div class="accordion-btn active-switch" id="headingOne">

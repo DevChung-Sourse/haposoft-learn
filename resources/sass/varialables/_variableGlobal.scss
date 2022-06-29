@@ -70,3 +70,44 @@ a {
   justify-content: $justify;
   align-items: $align;
 }
+
+.btn-manager {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: $background-style;
+    color: $color-btn;
+    font-size: 20px;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 4px 0px #00000040 inset;
+
+    &:hover {
+        background-color: #cde66e;
+    }
+}
+
+.btn-cancel {
+    padding: 7px 30px;
+    text-decoration: none;
+}
+
+.flex-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-custom-manager {
+    border: none;
+    border-radius: 20px;
+    background-color: $background-style;
+    color: $color-btn;
+    font-size: 20px;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 4px 0px #00000040 inset;
+
+    &:hover {
+        background-color: #cde66e;
+    }
+}

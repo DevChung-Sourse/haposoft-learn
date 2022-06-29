@@ -17,8 +17,8 @@ class CourseTagFactory extends Factory
     public function definition()
     {
         return [
-            'course_id' => $this->faker->numberBetween(1, 50),
-            'tag_id' => $this->faker->numberBetween(1, 1000),
+            'course_id' => $this->faker->numberBetween(1, 20),
+            'tag_id' => $this->faker->numberBetween(1, 100),
         ];
     }
 }

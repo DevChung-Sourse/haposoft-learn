@@ -1,7 +1,11 @@
 <div class="list-course-card">
     <div class="hapo-list-course-head">
         <div class="list-course-logo">
-            <img src="{{ $course->thumbnail }}" alt="list-course-html" class="list-course-img">
+            @if($course->id <= 20)
+                <img src="{{ $course->thumbnail }}" alt="list-course-html" class="list-course-img">
+            @else
+                <img src="{{ asset('storage/'.$course->thumbnail) }}"  class="list-course-img"/>
+            @endif
         </div>
         <div class="list-course-content">
             <div class="list-course-content-title">{{ $course->title }}</div>

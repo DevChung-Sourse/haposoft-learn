@@ -19,7 +19,7 @@ class DocumentFactory extends Factory
         return [
             'file_path' => $this->faker->imageUrl(),
             'title' => $this->faker->catchPhrase(),
-            'lesson_id' => $this->faker->numberBetween(1, 1000),
+            'lesson_id' => $this->faker->numberBetween(1, 50),
             'type' => $this->faker->lastName(),
         ];
     }

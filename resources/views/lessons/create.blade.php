@@ -25,7 +25,8 @@
                     <label for="timeLesson">Time read</label>
                     <input type="number" class="form-control" id="timeLesson" min="5" max="12" placeholder="timeLesson" name="timeLesson" >
                 </div>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn-manager btn-cancel my-3">Create</button>
+                <a href="{{ route('manager-course.lesson.index', $managerCourseId) }}" class="btn-manager btn-cancel bg-secondary">Cancel</a>
             </div>
         </div>
     </form>

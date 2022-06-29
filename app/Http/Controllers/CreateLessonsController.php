@@ -75,13 +75,6 @@ class CreateLessonsController extends Controller
         return view('lessons.edit', compact(['lesson', 'id']));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id, $lessonId)
     {
         $lesson = Lesson::find($lessonId);
@@ -104,5 +97,6 @@ class CreateLessonsController extends Controller
         $lesson = Lesson::find($lessonId);
         $lesson->delete();
         return redirect()->back()->with('success', 'Delete successfully!');
+
     }
 }
